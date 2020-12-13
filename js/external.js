@@ -39,3 +39,7 @@ alert("Welcome," + person1.firstName + ' ' + person1.lastName)
 // var isPremiumMember = confirm("Are you a premium member?")
 // alert("is the product offer applied: " + (isOfferValid + isPremiumMember))
 
+function Hello() {
+    alert("hey there");
+}
+Hello("codeup");
