@@ -11,9 +11,9 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-function sayHello(name) {
-    return ("Hello, " + name + "!");
-}
+// function sayHello(name) {
+//     return "Hello, " + name + "!";
+// }
 
 
 /**
@@ -24,8 +24,8 @@ function sayHello(name) {
  * console.log 'helloMessage' to check your work
  */
 
-var helloMessage = sayHello("Sam")
-console.log('helloMessage');
+// var helloMessage = sayHello("Sam");
+// console.log(helloMessage);
 
 
 /**
@@ -35,8 +35,8 @@ console.log('helloMessage');
  * console.
  */
 
-var myName = "Sam";
-console.log(sayHello(myName));
+// var myName = "Sam";
+// console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -61,11 +61,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-function isTwo(num) {
-    return num === 2;
-}
-console.log(random);
-console.log(isTwo(random));
+// function isTwo(num) {
+//     return num === 2;
+// }
+// console.log(random);
+// console.log(isTwo(random));
 
 /**
  * TODO:
@@ -79,12 +79,12 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-function calculateTip(x, y) {
-    return x * y;
-}
-console.log(calculateTip(0.20, 20));
-console.log(calculateTip(0.25, 25.50));
-console.log(calculateTip(0.15, 33.42));
+// function calculateTip(x, y) {
+//     return x * y;
+// }
+// console.log(calculateTip(0.20, 20));
+// console.log(calculateTip(0.25, 25.50));
+// console.log(calculateTip(0.15, 33.42));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -92,9 +92,9 @@ console.log(calculateTip(0.15, 33.42));
  * then display the dollar amount they should tip
  */
 
-var tipAmount = prompt("How much would you like to tip ?") /100;
-var totalOfthebill = prompt("Tell me how much your bill is and we will give you, your tip amount.");
-alert("You should tip $" + calculateTip(tipAmount, totalOfthebill) + " Thank you come again soon! ");
+// var tipAmount = prompt("How much would you like to tip ?") /100;
+// var totalOfTheBill = prompt("Tell me how much your bill is and we will give you, your tip amount.");
+// alert("You should tip $" + calculateTip(tipAmount, totalOfTheBill) + " Thank you, come again soon! ");
 
 
 /**
@@ -112,12 +112,67 @@ alert("You should tip $" + calculateTip(tipAmount, totalOfthebill) + " Thank you
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applydiscount(x, y) {
-    var price = x;
-    var percentOff = y;
-    var discountPrice = price - (price * percentOff);
-    return discountPrice;
-}
-console.log(applydiscount(45.99, 0.12));
-console.log(applydiscount(20, .2));
+// function applydiscount(x, y) {
+//     var price = x;
+//     var percentOff = y;
+//     var discountPrice = price - (price * percentOff);
+//     return discountPrice;
+// }
+// console.log(applydiscount(45.99, 0.12));
+// console.log(applydiscount(20, .2));
 
+
+
+// function isUpperCase(str) {
+//     return str.toUpperCase() === str;
+// }
+//
+// console.log(isUpperCase("Bob"));
+// console.log(isUpperCase("bob"));
+
+
+// var mightBeFive = 5;
+// if (mightBeFive === 5) {
+//     console.log("Yep, mightBeFive was set to the value of 5.")
+// }
+//
+// console.log("You'll always see me"); //when anything in mightBeFive is anything that is not 5
+
+
+// function isItANumber(paramenter) {
+//     if (typeof paramenter === "number") {
+//         return "Yep, " + paramenter +" is a number."
+//     }
+// }
+
+// console.log(isItANumber("Jim"));
+// console.log(isItANumber(74));
+//
+// var outOfMilk = true;
+//
+// if (outOfMilk) {
+//     console.log("Headed to store for milk.");
+// }
+//
+// if (outOfMilk === false) {
+//     console.log("Time to enjoy come cereal!!");
+// }
+//
+//
+// var hasACow = false;
+//
+// if (hasACow) {
+//     console.log("Milk the cow.");
+// } else {
+//     console.log("Going to store.")
+// }
+
+function isItANumber(paramenter) {
+    if (typeof paramenter === "number") {
+        return "Yep, " + paramenter +" is a number."
+    } else {
+        return "Nope, " + paramenter + " is not a number."
+    }
+}
+console.log(isItANumber(17));
+console.log(isItANumber("Jim"));
