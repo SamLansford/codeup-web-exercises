@@ -20,17 +20,24 @@
  * console.logging the function's return value
  */
 
-function analyzeColor(color) {
-    if (color === 'blue') {
-        return "Blue is the color of the sky."
-    } else if (color === 'red') {
-        return "Strawberries are red"
-    } else if (color === "cyan") {
-        return "I don't know anything about cyan."
-    } else {
-        return "Is a great color."
-    }
-}
+// function analyzeColor(color) {
+//     if (color === "blue") {
+//         return "blue is the color of the sky.";
+//     } else if (color === "red") {
+//         return "Strawberries are red.";
+//     } else if (color === "cyan") {
+//         return "I don't know anything about cyan";
+//     } else {
+//         return (color + " is a great color too");
+//     }
+// }
+//
+//
+//
+// console.log(analyzeColor("red"));
+// console.log(analyzeColor("blue"));
+// console.log(analyzeColor("cyan"));
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -45,30 +52,29 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-console.log(randomColor);
-console.log(analyzeColor(randomColor));
+// console.log(randomColor);
+// console.log(analyzeColor(randomColor));
+
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
 
-let color = randomColor
-
-switch(color) {
-    case "blue":
-        console.log("Blue is the color of the sky");
-        break;
-    case "red":
-        console.log("Strawberries are red.");
-        break;
-    case "cyan":
-        console.log("I don't know anything about cyan.");
-        break;
-    default:
-        console.log("Is a great color too" + color);
-}
-
+// let color = randomColor;
+//
+// switch (colors) {
+//     case "red":
+//         console.log("Roses are red.");
+//         break;
+//     case "blue":
+//         console.log("Oceans are blue.");
+//         break;
+//     case "cyan":
+//         console.log("I don't know anything about cyan.")
+//     default:
+//         console.log(color + " Is a great color too");
+// }
 
 /**
  * TODO:
@@ -79,23 +85,20 @@ switch(color) {
 
 /* ########################################################################## */
 
+// var userColor = prompt("What is your favorite color")
+// alert(analyzeColor(userColor));
 
-var userColor = prompt("What is your favorite color?");
-alert(analyzeColor(userColor));
-
-switch(analyzeColor) {
-    case "blue":
-        console.log("Blue is the color of the sky");
-        break;
-    case "red":
-        console.log("Roses are red.");
-        break;
-    case "cyan":
-        console.log("I don't know anything about cyan.");
-        break;
-    default:
-        console.log("Is a great color");
-}
+// switch (userColor) {
+//     case "blue":
+//         console.log("The color of the sky is blue.");
+//         break;
+//     case "red":
+//         console.log("Roses are red.");
+//     case "cyan":
+//         console.log("I don't know what cyan is.");
+//     default:
+//         console.log("is a great color too");
+// }
 
 
 /**
@@ -118,18 +121,16 @@ switch(analyzeColor) {
  * return value.
  */
 
-
-
-function calculateTotal(luckyNumber, totalAmount) {
+function  calculateTotal(luckyNumber, totalAmount) {
     switch (luckyNumber) {
         case 1:
-            return (totalAmount - (totalAmount * .1));
+          return totalAmount - (totalAmount * .1);
         case 2:
-            return (totalAmount - (totalAmount * .25));
+            return totalAmount - (totalAmount * .25);
         case 3:
-            return (totalAmount - (totalAmount * .35));
+            return totalAmount - (totalAmount * .35);
         case 4:
-            return (totalAmount - (totalAmount * .5));
+            return totalAmount - (totalAmount * .5);
         case 5:
             return 0;
         default:
@@ -137,9 +138,6 @@ function calculateTotal(luckyNumber, totalAmount) {
     }
 }
 
-console.log(calculateTotal(0, 100));
-console.log(calculateTotal(4, 100));
-console.log(calculateTotal(5, 100));
 
 
 /**
@@ -152,11 +150,11 @@ console.log(calculateTotal(5, 100));
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
 
-var toltalBill = prompt("Your total bill will be");
-alert("You lucky number was " + luckyNumber);
-alert("The price before discount " + toltalBill);
-var pricceAfterDiscount = calculateTotal(luckyNumber, toltalBill);
-alert("This is your price after discount. " + pricceAfterDiscount);
+var totalBill = prompt("Your total will be.");
+alert("Your lucky number was." + luckyNumber);
+alert("price before discount." + totalBill);
+var priceAfterDiscount = calculateTotal(luckyNumber, totalBill);
+alert("This is your price after discount " + priceAfterDiscount);
 
 
 
@@ -176,6 +174,7 @@ alert("This is your price after discount. " + pricceAfterDiscount);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
 
 var confirmNumber = confirm ("Would you like to enter a number?");
 if (confirmNumber) {
