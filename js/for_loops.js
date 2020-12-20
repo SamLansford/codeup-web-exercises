@@ -33,3 +33,9 @@
 // for (var i = 1; i <= 9; i++) {
 //     console.log(i.toString().repeat(i));
 // }
+
+
+for (var i = 1; i <= 100; i++) {
+    console.log(i);
+}
+
