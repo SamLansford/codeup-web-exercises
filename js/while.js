@@ -18,9 +18,18 @@
 // } while (allCones > 0);
 // console.log("They are all gone. Guess we are having Noodles next");
 
-var i = 0;
-while (i < 10) {
-    console.log(i);
-    i++;
-}
+// var i = 0;
+// while (i < 10) {
+//     console.log(i);
+//     i++;
+// }
 
+let shoppingList = 5;
+let outOfItems = 0;
+let goingShopping = outOfItems;
+
+do {
+    goingShopping = shoppingList === 5;
+    goingShopping++;
+} while (outOfItems);
+console.log(goingShopping);
