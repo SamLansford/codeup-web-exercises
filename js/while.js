@@ -24,12 +24,12 @@
 //     i++;
 // }
 
-let shoppingList = 5;
-let outOfItems = 0;
-let goingShopping = outOfItems;
 
+var shoppingList = ["eggs", "bread", "milk", "creamer"];
+
+// go shopping!!!
 do {
-    goingShopping = shoppingList === 5;
-    goingShopping++;
-} while (outOfItems);
-console.log(goingShopping);
+    console.log(shoppingList[0]);
+    shoppingList.shift();
+} while (shoppingList.length > 0);
+console.log("Done with shopping");
