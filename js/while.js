@@ -33,3 +33,9 @@ do {
     shoppingList.shift();
 } while (shoppingList.length > 0);
 console.log("Done with shopping");
+
+var i = 1;
+while (i <= 213) {
+    console.log(i);
+    i++
+}
