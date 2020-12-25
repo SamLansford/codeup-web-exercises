@@ -25,17 +25,26 @@
 // }
 
 
-var shoppingList = ["eggs", "bread", "milk", "creamer"];
+// var shoppingList = ["eggs", "bread", "milk", "creamer"];
+//
+// // go shopping!!!
+// do {
+//     console.log(shoppingList[0]);
+//     shoppingList.shift();
+// } while (shoppingList.length > 0);
+// console.log("Done with shopping");
+//
+// var i = 1;
+// while (i <= 213) {
+//     console.log(i);
+//     i++
+// }
 
-// go shopping!!!
-do {
-    console.log(shoppingList[0]);
-    shoppingList.shift();
-} while (shoppingList.length > 0);
-console.log("Done with shopping");
+var i = 0;
 
-var i = 1;
-while (i <= 213) {
-    console.log(i);
-    i++
+for (i = 25; i > 0; i--) {
+    alert(i);
 }
+
+
+
