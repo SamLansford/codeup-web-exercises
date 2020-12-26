@@ -39,3 +39,12 @@
 //     console.log(i);
 // }
 
+for (var i = 25; i > -1; i-=1) {
+    if (i == 1) {
+        console.log("Tomorrow is Christmas!")
+    } else if (i > 0) {
+        console.log("There are " + i + " days left before Christmas!");
+    } else if (i == 0) {
+        console.log("MerryChristmas!")
+    }
+}
