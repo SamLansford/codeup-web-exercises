@@ -4,7 +4,7 @@
 //     var number = prompt("Give me an odd number between 1-50");
 //     if (number % 2 !== 0 && number <= 50 && number >= 1) {
 //         break;
-//     }
+//     } else alert("This is not an odd number.")
 // }
 // console.log('Number to skip is: ' + number);
 // for (var i = 1; i <= 50; i+=2) {
@@ -14,13 +14,3 @@
 //     }
 //     console.log('Here is an odd number: ' + i);
 // }
-
-for (var i = 25; i > -1; i-=1) {
-    if (i == 1) {
-        console.log("Tomorrow is Christmas!")
-    } else if (i > 0) {
-        console.log("There are " + i + " days left before Christmas!");
-    } else if (i == 0) {
-        console.log("MerryChristmas!")
-    }
-}

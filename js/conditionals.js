@@ -44,8 +44,8 @@
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
+// var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+// var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
@@ -121,22 +121,22 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
-function  calculateTotal(luckyNumber, totalAmount) {
-    switch (luckyNumber) {
-        case 1:
-          return totalAmount - (totalAmount * .1);
-        case 2:
-            return totalAmount - (totalAmount * .25);
-        case 3:
-            return totalAmount - (totalAmount * .35);
-        case 4:
-            return totalAmount - (totalAmount * .5);
-        case 5:
-            return 0;
-        default:
-            return totalAmount;
-    }
-}
+// function  calculateTotal(luckyNumber, totalAmount) {
+//     switch (luckyNumber) {
+//         case 1:
+//           return totalAmount - (totalAmount * .1);
+//         case 2:
+//             return totalAmount - (totalAmount * .25);
+//         case 3:
+//             return totalAmount - (totalAmount * .35);
+//         case 4:
+//             return totalAmount - (totalAmount * .5);
+//         case 5:
+//             return 0;
+//         default:
+//             return totalAmount;
+//     }
+// }
 
 
 
@@ -148,13 +148,13 @@ function  calculateTotal(luckyNumber, totalAmount) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-
-var totalBill = prompt("Your total will be.");
-alert("Your lucky number was." + luckyNumber);
-alert("price before discount." + totalBill);
-var priceAfterDiscount = calculateTotal(luckyNumber, totalBill);
-alert("This is your price after discount " + priceAfterDiscount);
+// var luckyNumber = Math.floor(Math.random() * 6);
+//
+// var totalBill = prompt("Your total will be.");
+// alert("Your lucky number was." + luckyNumber);
+// alert("price before discount." + totalBill);
+// var priceAfterDiscount = calculateTotal(luckyNumber, totalBill);
+// alert("This is your price after discount " + priceAfterDiscount);
 
 
 
@@ -176,16 +176,24 @@ alert("This is your price after discount " + priceAfterDiscount);
  */
 
 
-var confirmNumber = confirm ("Would you like to enter a number?");
-if (confirmNumber) {
-    var confirmNumber = +prompt("What number would you like to enter");
-    if (isNaN(confirmNumber)) {
-        alert("That didn't look like a number.");
-    } else {
-        (confirmNumber % 2 === 0) ? alert("You entered an even number ") : alert("You entered an odd number");
-        (confirmNumber >= 0) ? alert("This number is positive") : alert("This number is negative");
-        alert("This is your number plus 100 and it's equal to " + (confirmNumber + 100));
-    }
+// var confirmNumber = confirm ("Would you like to enter a number?");
+// if (confirmNumber) {
+//     var confirmNumber = +prompt("What number would you like to enter");
+//     if (isNaN(confirmNumber)) {
+//         alert("That didn't look like a number.");
+//     } else {
+//         (confirmNumber % 2 === 0) ? alert("You entered an even number ") : alert("You entered an odd number");
+//         (confirmNumber >= 0) ? alert("This number is positive") : alert("This number is negative");
+//         alert("This is your number plus 100 and it's equal to " + (confirmNumber + 100));
+//     }
+// } else {
+//     alert("You didn't want to enter a number.");
+// }
+
+var randomNumber = Math.floor(Math.random() * 10)
+var i = randomNumber;
+if (i <= 5) {
+    console.log("Number " + randomNumber + " can be in our group")
 } else {
-    alert("You didn't want to enter a number.");
+    console.log("Number " + randomNumber + " can't be in this group")
 }
