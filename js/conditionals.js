@@ -199,4 +199,5 @@ if (i <= 5) {
 }
 
 var i = randomNumber;
-(i % 2 === 0) ? alert("Number " + randomNumber + " is an even number") : alert("Number " + randomNumber + " is an odd number")
+(i % 2 === 0) ? alert("Number " + randomNumber + " is an even number") : alert("Number " + randomNumber + " is an odd number");
+(i >= 0) ? alert("Number " + randomNumber + " is positive") : alert("Number " + randomNumber + " is negative");
