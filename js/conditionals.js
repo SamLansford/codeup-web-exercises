@@ -197,3 +197,6 @@ if (i <= 5) {
 } else {
     console.log("Number " + randomNumber + " can't be in this group")
 }
+
+var i = randomNumber;
+(i % 2 === 0) ? alert("Number " + randomNumber + " is an even number") : alert("Number " + randomNumber + " is an odd number")
