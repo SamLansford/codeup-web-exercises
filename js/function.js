@@ -40,7 +40,7 @@
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
+// var random = Math.floor((Math.random() * 3) + 1);
 
 
 /**
@@ -167,21 +167,30 @@ var random = Math.floor((Math.random() * 3) + 1);
 //     console.log("Going to store.")
 // }
 
-function isItANumber(paramenter) {
-    if (typeof paramenter === "number") {
-        return "Yep, " + paramenter +" is a number."
-    } else {
-        return "Nope, " + paramenter + " is not a number."
-    }
-}
-console.log(isItANumber(17));
-console.log(isItANumber("Jim"));
+// function isItANumber(paramenter) {
+//     if (typeof paramenter === "number") {
+//         return "Yep, " + paramenter +" is a number."
+//     } else {
+//         return "Nope, " + paramenter + " is not a number."
+//     }
+// }
+// console.log(isItANumber(17));
+// console.log(isItANumber("Jim"));
 
 //You are counting points for a basketball game, given the amount of 2-pointers scored and 3-pointers scored,
 // find the final points for the team and return that value.
 
-function points(twoPointers, threePointers){
-    return twoPointers * 2 + threePointers * 3;
+// function points(twoPointers, threePointers){
+//     return twoPointers * 2 + threePointers * 3;
+// }
+//
+// console.log(points(2,6));
+
+// Write a function that takes an integer minutes and converts it to seconds.
+
+
+function convertMinutes(second) {
+    return Math.floor(second * 60);
 }
 
-console.log(points(2,6));
+console.log(convertMinutes(2));
