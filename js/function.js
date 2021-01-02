@@ -188,9 +188,14 @@
 
 // Write a function that takes an integer minutes and converts it to seconds.
 
+// function convertMinutes(second) {
+//     return Math.floor(second * 60);
+// }
+//
+// console.log(convertMinutes(2));
 
-function convertMinutes(second) {
-    return Math.floor(second * 60);
+// Write a function that converts hours into seconds.
+
+function convertHours(second) {
+    return Math.floor(second * 3600);
 }
-
-console.log(convertMinutes(2));
