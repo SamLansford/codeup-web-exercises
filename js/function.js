@@ -196,6 +196,12 @@
 
 // Write a function that converts hours into seconds.
 
-function convertHours(second) {
-    return Math.floor(second * 3600);
+// function convertHours(second) {
+//     return Math.floor(second * 3600);
+// }
+
+// Create a function that takes a number as an argument and returns negative of that number. Return negative numbers without any change.
+
+function returnNegative(n){
+    return -Math.abs(n)
 }
