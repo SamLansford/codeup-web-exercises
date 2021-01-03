@@ -200,8 +200,16 @@
 //     return Math.floor(second * 3600);
 // }
 
+// Write a function that converts days into seconds.
+
+function convertDays(seconds) {
+    return Math.floor(seconds * 24 * 3600);
+}
+
+
 // Create a function that takes a number as an argument and returns negative of that number. Return negative numbers without any change.
 
-function returnNegative(n){
-    return -Math.abs(n)
-}
+// function returnNegative(n){
+//     return -Math.abs(n);
+// }
+
