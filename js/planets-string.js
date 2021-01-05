@@ -36,9 +36,9 @@
     // console.log(listedPlanets);
 
 
-    var listOfPlanets = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
-
-    console.log(listOfPlanets);
+    // var listOfPlanets = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
+    //
+    // console.log(listOfPlanets);
 })();
 
 
@@ -48,5 +48,15 @@
 var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
 
 function allIndexesOf(array, value) {
-
+    var returnArray = [];
+    array.forEach(function(element, index, array){
+        if (element == value){
+            returnArray.push(index);
+        }
+    });
+    return returnArray;
 }
+console.log(allIndexesOf(fruits,"apple"));
+console.log(allIndexesOf(fruits, "guava"));
+console.log(allIndexesOf(fruits, "pineapple"));
+
