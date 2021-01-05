@@ -78,3 +78,7 @@ function removeAll(array, value) {
 console.log(removeAll(bugs, "ant"));
 console.log(removeAll(bugs, "mosquito"));
 console.log(removeAll(bugs, "roach"));
+
+
+
+
