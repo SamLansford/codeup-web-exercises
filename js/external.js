@@ -1,48 +1,48 @@
-// "use strict"
-// console.log("Hello from external JavaScript")
-// alert('Welcome to my Website!')
-//
-// let person1 = {
-//     firstName: "Sam",
-//     lastName: "Lansford",
-// }
-// person1.email = prompt("Enter your email")
-// alert("Welcome," + person1.firstName + ' ' + person1.lastName)
+"use strict"
+console.log("Hello from external JavaScript")
+alert('Welcome to my Website!')
 
-// var respond = prompt('What is your favorite color');
-// alert("Great," + respond + " is my favorite color too!");
+let person1 = {
+    firstName: "Sam",
+    lastName: "Lansford",
+}
+person1.email = prompt("Enter your email")
+alert("Welcome," + person1.firstName + ' ' + person1.lastName)
+
+var respond = prompt('What is your favorite color');
+alert("Great," + respond + " is my favorite color too!");
 
 
-// var dailyRentalRateDollars = parseInt(prompt('What is the daily rental rate in dollars?'))
-// var littleMermaidDaysRented = parseInt(prompt("How many days was Little Mermaid rented."))
-// var BrotherBearDaysRented = parseInt(prompt("How many days was Brother Bear rented."))
-// var HerculesDaysRented = parseInt(prompt("How may days was Hercules rented"))
-// var totalRentalCost = (littleMermaidDaysRented + BrotherBearDaysRented + HerculesDaysRented) * dailyRentalRateDollars
-// alert('Total coast is ' + totalRentalCost)
-//
-//  var googleHours = prompt("How many hours did you work at Google")
-//  var googleHourlyRateDollars = 400
-//  var amazonHours = prompt("How many hours did you work at Amazon")
-//  var amazonHourlyRateDollars = 380
-//  var facebookHours = prompt("How many hours did you work at Facebook")
-//  var facebookHourlyRateDollars =350
-//  var totalMade = ((amazonHourlyRateDollars * amazonHours)+ (facebookHourlyRateDollars * facebookHours)+
-//      (googleHourlyRateDollars * googleHours))
-//  alert("Total coast is " + totalMade)
+var dailyRentalRateDollars = parseInt(prompt('What is the daily rental rate in dollars?'))
+var littleMermaidDaysRented = parseInt(prompt("How many days was Little Mermaid rented."))
+var BrotherBearDaysRented = parseInt(prompt("How many days was Brother Bear rented."))
+var HerculesDaysRented = parseInt(prompt("How may days was Hercules rented"))
+var totalRentalCost = (littleMermaidDaysRented + BrotherBearDaysRented + HerculesDaysRented) * dailyRentalRateDollars
+alert('Total coast is ' + totalRentalCost)
 
-// let isClassOpen = confirm("Is there room in the class?");
-// let isScheduleOpen = confirm("Does this class work with your schedule?")
-// alert("You may register: " + (isClassOpen && isScheduleOpen))
+ var googleHours = prompt("How many hours did you work at Google")
+ var googleHourlyRateDollars = 400
+ var amazonHours = prompt("How many hours did you work at Amazon")
+ var amazonHourlyRateDollars = 380
+ var facebookHours = prompt("How many hours did you work at Facebook")
+ var facebookHourlyRateDollars =350
+ var totalMade = ((amazonHourlyRateDollars * amazonHours)+ (facebookHourlyRateDollars * facebookHours)+
+     (googleHourlyRateDollars * googleHours))
+ alert("Total coast is " + totalMade)
 
-// var areEnoughItemsPurchased = confirm("Did you buy more than 2 items?")
-// var isOfferValid = confirm("Is the offer still valid?")
-// var isPremiumMember = confirm("Are you a premium member?")
-// alert("is the product offer applied: " + (isOfferValid + isPremiumMember))
+let isClassOpen = confirm("Is there room in the class?");
+let isScheduleOpen = confirm("Does this class work with your schedule?")
+alert("You may register: " + (isClassOpen && isScheduleOpen))
 
-// function Hello() {
-//     alert("hey there");
-// }
-// Hello("codeup");
+var areEnoughItemsPurchased = confirm("Did you buy more than 2 items?")
+var isOfferValid = confirm("Is the offer still valid?")
+var isPremiumMember = confirm("Are you a premium member?")
+alert("is the product offer applied: " + (isOfferValid + isPremiumMember))
+
+function Hello() {
+    alert("hey there");
+}
+Hello("codeup");
 
 function isFive(input) {
     return input == 5;
@@ -86,3 +86,4 @@ console.log(getSmallerSegment("codeup", 6));
 (function() {
 
 })();
+
