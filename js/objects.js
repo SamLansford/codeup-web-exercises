@@ -12,6 +12,11 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    //
+
+
+
+    //
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +26,9 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+
+
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -54,6 +62,9 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+
+
 
     /**
      * TODO:
@@ -96,63 +107,95 @@
 
 
 
-var beverage1 = {
-    brandName: "rum",
-    type: "liquor",
-    volumeInLiters: 35,
-    priceInCenters: 15,
-    expirationDate: "4/30/2021",
-    dateOfPreviousSips: ["2/18/2021"],
-    isOpen: true,
-}
+// var beverage1 = {
+//     brandName: "rum",
+//     type: "liquor",
+//     volumeInLiters: 35,
+//     priceInCenters: 15,
+//     expirationDate: "4/30/2021",
+//     dateOfPreviousSips: ["2/18/2021"],
+//     isOpen: true,
+// }
+//
+// console.log(beverage1)
+//
+//
+// var beverage2 = {};
+// beverage2.brandName = "Rose";
+// beverage2.type = "wine";
+// beverage2.volumeInLiters = 35;
+// beverage2.priceInCenters = 20;
+// beverage2.expirationDate = "4/30/2021";
+// beverage2.dateOfPreviousSips = ["2/18/2021"];
+// beverage2.isOpen = true;
+//
+// console.log(beverage2);
+//
+//
+//
+// var users = [
+//     {
+//         givenName: "Sam",
+//         age: 21
+//     },
+//     {
+//         givenName: "Cathy",
+//         age: 34
+//     },
+//     {
+//         givenName: "Karen",
+//         age: 43
+//     }
+// ];
+//
+//
+//
+// console.log(users[0].givenName + " " + users[1].givenName + " " + users[2].givenName );
+//
+// users.forEach(function (user){
+//     user.givenName = "John Doe";
+//     user.age += 1
+// });
+//
+// console.log(users);
+//
+// users.forEach(function (user){
+//     user.age += 1
+// });
+//
+// console.log(users);
 
-console.log(beverage1)
 
 
-var beverage2 = {};
-beverage2.brandName = "Rose";
-beverage2.type = "wine";
-beverage2.volumeInLiters = 35;
-beverage2.priceInCenters = 20;
-beverage2.expirationDate = "4/30/2021";
-beverage2.dateOfPreviousSips = ["2/18/2021"];
-beverage2.isOpen = true;
+var dog = {
+    breed: "Husky",
+    weightInPounds: 45,
+    age: 4,
+    color: "blue",
+    canBreed: true,
+    shotRecords: [
+        {
+            date: new Date(),
+            typeOfShot: "Bordetella",
+        },
+        {
+            date: new Date(),
+            typeOfShot: "",
+        },
+    ],
 
-console.log(beverage2);
-
-
-
-var users = [
-    {
-        givenName: "Sam",
-        age: 21
+    bark: function () {
+        console.log("Woof! Woof! Woof!");
     },
-    {
-        givenName: "Cathy",
-        age: 34
+    getOlder: function () {
+        this.age += 1
     },
-    {
-        givenName: "Karen",
-        age: 43
+    disableBreeding: function () {
+        this.canBreed = false;
+    },
+    vaccinate: function (nameOfShot) {
+        this.shotRecords.push({date: new Date(), typeOfShot: nameOfShot});
     }
-];
-
-
-
-console.log(users[0].givenName + " " + users[1].givenName + " " + users[2].givenName );
-
-users.forEach(function (user){
-    user.givenName = "John Doe";
-    user.age += 1
-});
-
-console.log(users);
-
-users.forEach(function (user){
-    user.age += 1
-});
-
-console.log(users);
-
-
-
+}
+dog.vaccinate("flue");
+console.log(dog)
