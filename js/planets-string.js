@@ -60,3 +60,21 @@ console.log(allIndexesOf(fruits,"apple"));
 console.log(allIndexesOf(fruits, "guava"));
 console.log(allIndexesOf(fruits, "pineapple"));
 
+// Define a function named removeAll(array, value) that takes in two arguments. The first argument should be an array and
+// the second argument should be a value you wish to remove
+
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+
+function removeAll(array, value) {
+    var returnArray = [];
+    array.forEach(function (element, index, array){
+        if (element !== value) {
+            returnArray.push(element);
+        }
+    });
+    return returnArray
+}
+
+console.log(removeAll(bugs, "ant"));
+console.log(removeAll(bugs, "mosquito"));
+console.log(removeAll(bugs, "roach"));
