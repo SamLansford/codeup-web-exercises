@@ -1,4 +1,4 @@
-(function() {
+// (function() {
     "use strict";
 
     /**
@@ -14,7 +14,13 @@
 
     //
 
-
+    // var person = {
+    //     firstName: "Sam",
+    //     lastName: "Lansford",
+    //     };
+    //
+    // console.log(person.firstName);
+    // console.log(person.lastName);
 
     //
     /**
@@ -27,7 +33,11 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-
+    // person.sayHello = function () {
+    //     return  "Hello From " + person.firstName + " " + person.lastName;
+    // }
+    //
+    // console.log(person.sayHello())
 
 
     /** TODO:
@@ -44,11 +54,39 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    let shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    // function displayCurrency(amount) {
+    //     return "$" + amount.toFixed(2);
+    // }
+
+function calculateDiscount(amount, discountAmountThreshold, discountPercentage){
+    if (amount > discountAmountThreshold) {
+        return amount * discountPercentage;
+    } else {
+        return 0;
+    } // return (amount > discountAmountThreshold) ? amount * discountPercentage : 0;
+}
+
+    shoppers.forEach(function (shopper) {
+        let shopperName = shopper.name
+        let amountBeforeDiscount = shopper.amount
+        let discountPercent =.12
+        let discountAmountThreshold = 200;
+        let amountOff = calculateDiscount(amountBeforeDiscount,discountAmountThreshold,discountPercent);
+        let totalCost = amountBeforeDiscount - amountOff;
+        let message = shopperName + " The price before discount is "
+               + amountBeforeDiscount + ". The price after the discount is "
+               + totalCost;
+        console.log(message);
+    });
+
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -56,12 +94,57 @@
      * property. The author property should be an object with properties
      * `firstName` and `lastName`. Be creative and add at least 5 books to the
      * array
-     *
      * Example:
      * > console.log(books[0].title) // "The Salmon of Doubt"
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+
+
+
+
+    var books = [
+        {title: "The Salmon of Doubt",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams",
+            }},
+        {title: "A Game of Thrones",
+            author: {
+                firstName: "George R.R",
+                lastName: "Martin",
+            }},
+        {title: "To Kill A Mockingbird",
+            author: {
+                firstName: "Harper",
+                lastName: "Lee",
+            }},
+        {title: "Moby Dick",
+            author: {
+                firstName: "Herman",
+                lastName: "Melville",
+            }},
+
+        {title: "The Lord of The Rings",
+            author: {
+                firstName: "J. R.R.",
+                lastName: "Tolkien",
+            },
+        }];
+
+// let books = [
+//     {title: "To Kill a Mockingbird", author: {firstName: "Harper ", lastName: "Lee"}},
+//     {title: "1984", author: {firstName: "George", lastName: " Orwell"}},
+//     {title: "Harry Potter", author: {firstName: "J.K.", lastName: " Rowling"}},
+//     {title: "The Lord of the Rings", author: {firstName: "J.R.R.", lastName: " Tolkien"}},
+//     {title: "The Great Gatsby", author: {firstName: "F. Scott", lastName: " Fitzgerald"}},
+// ]
+
+console.log(books[0].title);
+console.log(books[0].author.firstName);
+console.log(books[0].author.lastName);
+
 
 
 
@@ -91,6 +174,15 @@
      *      ...
      */
 
+    books.forEach(function (book, index){
+        let bookNumber = index + 1
+        console.log("Book # " + bookNumber   + "\n" + book.title + "\n"
+                + book.author.firstName + " "
+                +  book.author.lastName);
+    });
+
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -102,7 +194,46 @@
      *   `showBookInfo` function.
      */
 
-})();
+    function createBook(title,author) {
+        let nameArr = author.split(' ');
+        let firstName = nameArr[0];
+        let lastName = nameArr[1];
+        return {
+            title: title,
+            author: {
+                firstName: firstName,
+                lastName: lastName,
+            }
+        }
+    }
+
+
+    let booksUsingFunction = [];
+
+    let titles = ["title1","title2","title3"];
+    let authors = ["author1","author2","author3"];
+
+    for (let i = 0; i < titles.length; i +=1) {
+        booksUsingFunction.push(createBook(titles[i],authors[i]));
+    }
+
+    function showBookInfo(book,bookNumber) {
+        console.log("Book # " + (bookNumber+ 1));
+        console.log("Title:  " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    }
+
+    // books.forEach(function (book,index){
+    //     showBookInfo(book,index + 1)
+    // })
+
+    books.forEach(showBookInfo);
+
+    // console.log(booksUsingFunction)
+
+
+
+// })();
 
 
 
@@ -164,38 +295,41 @@
 // });
 //
 // console.log(users);
-
-
-
-var dog = {
-    breed: "Husky",
-    weightInPounds: 45,
-    age: 4,
-    color: "blue",
-    canBreed: true,
-    shotRecords: [
-        {
-            date: new Date(),
-            typeOfShot: "Bordetella",
-        },
-        {
-            date: new Date(),
-            typeOfShot: "",
-        },
-    ],
-
-    bark: function () {
-        console.log("Woof! Woof! Woof!");
-    },
-    getOlder: function () {
-        this.age += 1
-    },
-    disableBreeding: function () {
-        this.canBreed = false;
-    },
-    vaccinate: function (nameOfShot) {
-        this.shotRecords.push({date: new Date(), typeOfShot: nameOfShot});
-    }
-}
-dog.vaccinate("flue");
-console.log(dog)
+//
+//
+//
+// var dog = {
+//     breed: "Husky",
+//     weightInPounds: 45,
+//     age: 4,
+//     color: "blue",
+//     canBreed: true,
+//     shotRecords: [
+//         {
+//             date: new Date(),
+//             typeOfShot: "Bordetella",
+//         },
+//         {
+//             date: new Date(),
+//             typeOfShot: "",
+//         },
+//     ],
+//
+//     bark: function () {
+//         console.log("Woof! Woof! Woof!");
+//     },
+//     getOlder: function () {
+//         this.age += 1;
+//     },
+//     disableBreeding: function () {
+//         this.canBreed = false;
+//     },
+//     vaccinate: function (nameOfShot) {
+//         this.shotRecords.push({
+//             date: new Date(),
+//             typeOfShot: nameOfShot
+//         });
+//     }
+// }
+// dog.vaccinate("flue");
+// console.log(dog)

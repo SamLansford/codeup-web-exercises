@@ -1,8 +1,8 @@
 (function(){
     "use strict";
 
-    var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
-    var planetsArray;
+    // var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
+    // var planetsArray;
 
     /**
      * TODO:
@@ -12,9 +12,9 @@
      */
 
 
-    var planetsArray =  planetsString.split("|")
-
-    console.log(planetsArray);
+    // var planetsArray =  planetsString.split("|")
+    //
+    // console.log(planetsArray);
 
     /**
      * TODO:
@@ -79,6 +79,72 @@ console.log(removeAll(bugs, "ant"));
 console.log(removeAll(bugs, "mosquito"));
 console.log(removeAll(bugs, "roach"));
 
+var randomNumber = Math.floor(Math.random());
+
+// Make a function called randomIntBetween(min, max) that returns a random number between
+// the min and the max.
+
+function randomIntBetween(min, max) {
+    return Math.floor(Math.random() * (max + min + 1) ) + min;
+}
+
+console.log(randomIntBetween(1,90));
+
+// Make a function called coinFlip() that returns either 0 or 1, randomly
+
+function coinFlip() {
+    return Math.floor(Math.random() * 2);
+};
+console.log("You got " + coinFlip() + " on the coin flip");
 
 
+// Make a function called twoDice() that returns the sum of rolling two six sided dice.
 
+function twoDice() {
+    var diceOne = Math.floor(Math.random() * 6) + 1;
+    var diceTwo = Math.floor(Math.random() * 6) + 1;
+    return diceOne + diceTwo;
+};
+console.log("Two dice = " + twoDice());
+
+// Make a function called twentySidedDie() that returns a random integer between 1 and 20.
+
+function twentySidedDie() {
+    return Math.floor(Math.random() * 20) + 1;
+};
+console.log("Number from the twenty sided dice is " + twentySidedDie());
+
+// Make a function called twelveSidedDie() that returns a random integer between 1 and 12.
+
+function twelveSidedDie() {
+    return Math.floor(Math.random() * 12) + 1;
+};
+
+
+// Make a function called tetrahedron() that returns a random integer between 1 and 4.
+
+function tetrahedron() {
+    return Math.floor(Math.random() * 4) + 1;
+};
+console.log(tetrahedron());
+
+
+// Make a function called rollDie() that returns an integer between 1 and 6.
+
+function rollDie() {
+    return Math.floor(Math.random() * 6) + 1;
+};
+console.log("The number you rolled is " + rollDie());
+
+// Make a function called listOfRolls(num) that takes in a number containing how many 6-sided
+// dice rolls you want to make. The listOfRolls function should return an array of that length,
+// where each element of the array is the result of the rollDie function.
+
+function listOfRolls(num) {
+    var returnArray = [];
+    for (var i = 0; i < num; i++) {
+        returnArray.push(rollDie());
+    } return returnArray;
+};
+var numberOfRolls = prompt("How many time would you like to roll the dice" );
+console.log("Here are the result of the rolls " + listOfRolls(numberOfRolls));

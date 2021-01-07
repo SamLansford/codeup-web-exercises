@@ -120,6 +120,9 @@
 // }
 // console.log(applydiscount(45.99, 0.12));
 // console.log(applydiscount(20, .2));
+// function numToDollars(num) {
+//     return '$' + num.toFixed(2);
+// }
 
 
 
