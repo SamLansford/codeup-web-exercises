@@ -83,95 +83,109 @@
 // Make a function called randomIntBetween(min, max) that returns a random number between
 // the min and the max.
 
-function randomIntBetween(min, max) {
-    return Math.floor(Math.random() * (max + min + 1) ) + min;
-}
+// function randomIntBetween(min, max) {
+//     return Math.floor(Math.random() * (max + min + 1) ) + min;
+// }
+//
+// console.log("The Number between max and minimum is " + randomIntBetween(1,90));
+//
+// // Make a function called coinFlip() that returns either 0 or 1, randomly
+//
+// function coinFlip() {
+//     return Math.floor(Math.random() * 2);
+// };
+// console.log("You got " + coinFlip() + " on the coin flip");
+//
+//
+// // Make a function called twoDice() that returns the sum of rolling two six sided dice.
+//
+// function twoDice() {
+//     var diceOne = Math.floor(Math.random() * 6) + 1;
+//     var diceTwo = Math.floor(Math.random() * 6) + 1;
+//     return diceOne + diceTwo;
+// };
+// console.log("The sum of two dices is " + twoDice());
+//
+// // Make a function called twentySidedDie() that returns a random integer between 1 and 20.
+//
+// function twentySidedDie() {
+//     return Math.floor(Math.random() * 20) + 1;
+// };
+// console.log("Number from the twenty sided dice is " + twentySidedDie());
+//
+// // Make a function called twelveSidedDie() that returns a random integer between 1 and 12.
+//
+// function twelveSidedDie() {
+//     return Math.floor(Math.random() * 12) + 1;
+// };
+//
+// console.log("Number from the twelve side dice is "  + twelveSidedDie());
+//
+// // Make a function called tetrahedron() that returns a random integer between 1 and 4.
+//
+// function tetrahedron() {
+//     return Math.floor(Math.random() * 4) + 1;
+// };
+// console.log("Number from tetrahedron is " + tetrahedron());
+//
+//
+// // Make a function called rollDie() that returns an integer between 1 and 6.
+//
+// function rollDie() {
+//     return Math.floor(Math.random() * 6) + 1;
+// };
+// console.log("The number you rolled is " + rollDie());
+//
+// // Make a function called listOfRolls(num) that takes in a number containing how many 6-sided
+// // dice rolls you want to make. The listOfRolls function should return an array of that length,
+// // where each element of the array is the result of the rollDie function.
+//
+// function listOfRolls(num) {
+//     let returnArray = [];
+//     for (let i = 0; i < num; i += 1) {
+//         returnArray.push(rollDie());
+//     } return returnArray;
+// };
+// //let numberOfRolls = prompt("How many time would you like to roll the dice" );
+// //console.log("Here are the result of the rolls " + listOfRolls(numberOfRolls));
+//
+//
+// // Make a function called listOfRollsFromDieFunc(numberOfRolls, diceFunction)
+// // This function should take in two arguments:
+// // The first argument is the number of rolls you want to make.
+// // The second argument is a function that contains the function definition for the type of die you want to roll.
+// // For example, if we call listOfDieRollsFromDieFunc(1, tetrahedron), then the function will return an array containing one value that is the result of calling the tetrahedron function.
+//
+//
+// function listOfRollsFromDieFunc(numberOfRolls,typeOfDie) {
+//     let returnArray = [];
+//     for (let i = 0; i < numberOfRolls; i += 1) {
+//         returnArray.push(window[typeOfDie].apply());
+//     }
+//     return returnArray;
+// }
+//
+// // console.log("twelveSidedDie: " + listOfRollsFromDieFunc(10,"twelveSidedDie"))
+// // console.log("tetrahedron: " + listOfRollsFromDieFunc(16,"tetrahedron"))
+// // console.log("twentySidedDie: " + listOfRollsFromDieFunc(20,"twentySidedDie"))
+// // console.log("twoDice: " + listOfRollsFromDieFunc(50,"twoDice"))
+// let inputTypeOfDie = prompt("What kind of dice would you like to roll? ")
+// let inputNumberOfRolls = prompt("How many times would you like to role the die?")
+//
+// let rollResults = listOfRollsFromDieFunc(inputNumberOfRolls,inputTypeOfDie);
+//
+// alert("Here are your dice roll results: " + rollResults.toString());
 
-console.log("The Number between max and minimum is " + randomIntBetween(1,90));
+/**
+ * JS Array Practice
+ * Intermediate Array practice: array creation, iteration, and manipulation
+ */
 
-// Make a function called coinFlip() that returns either 0 or 1, randomly
+// Exercise 0. Write a function named first() that returns only the first element of an array
 
-function coinFlip() {
-    return Math.floor(Math.random() * 2);
+function first() {
+    let returnFirstArr = [1,2,3,4];
+    return returnFirstArr[0];
 };
-console.log("You got " + coinFlip() + " on the coin flip");
 
-
-// Make a function called twoDice() that returns the sum of rolling two six sided dice.
-
-function twoDice() {
-    var diceOne = Math.floor(Math.random() * 6) + 1;
-    var diceTwo = Math.floor(Math.random() * 6) + 1;
-    return diceOne + diceTwo;
-};
-console.log("The sum of two dices is " + twoDice());
-
-// Make a function called twentySidedDie() that returns a random integer between 1 and 20.
-
-function twentySidedDie() {
-    return Math.floor(Math.random() * 20) + 1;
-};
-console.log("Number from the twenty sided dice is " + twentySidedDie());
-
-// Make a function called twelveSidedDie() that returns a random integer between 1 and 12.
-
-function twelveSidedDie() {
-    return Math.floor(Math.random() * 12) + 1;
-};
-
-console.log("Number from the twelve side dice is "  + twelveSidedDie());
-
-// Make a function called tetrahedron() that returns a random integer between 1 and 4.
-
-function tetrahedron() {
-    return Math.floor(Math.random() * 4) + 1;
-};
-console.log("Number from tetrahedron is " + tetrahedron());
-
-
-// Make a function called rollDie() that returns an integer between 1 and 6.
-
-function rollDie() {
-    return Math.floor(Math.random() * 6) + 1;
-};
-console.log("The number you rolled is " + rollDie());
-
-// Make a function called listOfRolls(num) that takes in a number containing how many 6-sided
-// dice rolls you want to make. The listOfRolls function should return an array of that length,
-// where each element of the array is the result of the rollDie function.
-
-function listOfRolls(num) {
-    let returnArray = [];
-    for (let i = 0; i < num; i += 1) {
-        returnArray.push(rollDie());
-    } return returnArray;
-};
-//let numberOfRolls = prompt("How many time would you like to roll the dice" );
-//console.log("Here are the result of the rolls " + listOfRolls(numberOfRolls));
-
-
-// Make a function called listOfRollsFromDieFunc(numberOfRolls, diceFunction)
-// This function should take in two arguments:
-// The first argument is the number of rolls you want to make.
-// The second argument is a function that contains the function definition for the type of die you want to roll.
-// For example, if we call listOfDieRollsFromDieFunc(1, tetrahedron), then the function will return an array containing one value that is the result of calling the tetrahedron function.
-
-
-function listOfRollsFromDieFunc(numberOfRolls,typeOfDie) {
-    let returnArray = [];
-    for (let i = 0; i < numberOfRolls; i += 1) {
-        returnArray.push(window[typeOfDie].apply());
-    }
-    return returnArray;
-}
-
-// console.log("twelveSidedDie: " + listOfRollsFromDieFunc(10,"twelveSidedDie"))
-// console.log("tetrahedron: " + listOfRollsFromDieFunc(16,"tetrahedron"))
-// console.log("twentySidedDie: " + listOfRollsFromDieFunc(20,"twentySidedDie"))
-// console.log("twoDice: " + listOfRollsFromDieFunc(50,"twoDice"))
-let inputTypeOfDie = prompt("What kind of dice would you like to roll? ")
-let inputNumberOfRolls = prompt("How many times would you like to role the die?")
-
-let rollResults = listOfRollsFromDieFunc(inputNumberOfRolls,inputTypeOfDie);
-
-alert("Here are your dice roll results: " + rollResults.toString());
+console.log(first())
