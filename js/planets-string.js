@@ -1,4 +1,4 @@
-(function(){
+(function () {
     "use strict";
 
     // var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
@@ -155,37 +155,80 @@
 // // The first argument is the number of rolls you want to make.
 // // The second argument is a function that contains the function definition for the type of die you want to roll.
 // // For example, if we call listOfDieRollsFromDieFunc(1, tetrahedron), then the function will return an array containing one value that is the result of calling the tetrahedron function.
-//
-//
-// function listOfRollsFromDieFunc(numberOfRolls,typeOfDie) {
-//     let returnArray = [];
-//     for (let i = 0; i < numberOfRolls; i += 1) {
-//         returnArray.push(window[typeOfDie].apply());
-//     }
-//     return returnArray;
-// }
-//
-// // console.log("twelveSidedDie: " + listOfRollsFromDieFunc(10,"twelveSidedDie"))
-// // console.log("tetrahedron: " + listOfRollsFromDieFunc(16,"tetrahedron"))
-// // console.log("twentySidedDie: " + listOfRollsFromDieFunc(20,"twentySidedDie"))
-// // console.log("twoDice: " + listOfRollsFromDieFunc(50,"twoDice"))
-// let inputTypeOfDie = prompt("What kind of dice would you like to roll? ")
-// let inputNumberOfRolls = prompt("How many times would you like to role the die?")
-//
-// let rollResults = listOfRollsFromDieFunc(inputNumberOfRolls,inputTypeOfDie);
-//
-// alert("Here are your dice roll results: " + rollResults.toString());
 
-/**
- * JS Array Practice
- * Intermediate Array practice: array creation, iteration, and manipulation
- */
+
+function listOfRollsFromDieFunc(numberOfRolls, typeOfDie) {
+    let returnArray = [];
+    for (let i = 0; i < numberOfRolls; i += 1) {
+        returnArray.push(window[typeOfDie].apply());
+    }
+    return returnArray;
+}
+
+
+let inputTypeOfDie = prompt("What kind of dice would you like to roll? ")
+let inputNumberOfRolls = prompt("How many times would you like to role the die?")
+
+let rollResults = listOfRollsFromDieFunc(inputNumberOfRolls, inputTypeOfDie);
+
+alert("Here are your dice roll results: " + rollResults.toString());
+
+
+//
+// /**
+//  * JS Array Practice
+//  * Intermediate Array practice: array creation, iteration, and manipulation
+//  */
 
 // Exercise 0. Write a function named first() that returns only the first element of an array
 
-function first() {
-    let returnFirstArr = [1,2,3,4];
-    return returnFirstArr[0];
-};
+// function first() {
+//     let returnFirstArr = [1,2,3,4];
+//     return returnFirstArr[0];
+// };
+//
+// console.log(first());
 
-console.log(first())
+// Write a function isGreaterThanTwo that takes in a number and returns true
+// if the number is more than two and false otherwise.
+
+// function isGreaterThanTwo(num) {
+//     return num > 2;
+// }
+
+
+// Write a function, isInArray, that takes in an array and another value.
+// If the value is in the array, return true and false otherwise.
+
+
+// example input ([1, 2, 3], 3)
+// output should be true
+
+// example input ([1,2,3],4)
+//output should be false;
+
+// function isINArray(arr,input) {
+//     if (arr.indexOf(input) > -1) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// Write a function, getDayOfTheWeek, that takes in a number. If the number is between one and seven,
+// return the name of the day of the week. Otherwise, return the message 'out of range'.
+
+// 1 = 'Monday'
+// 2 = 'Tuesday'
+// 3 = 'Wednesday'
+// 4 = 'Thursday'
+// 5 = 'Friday'
+// 6 = 'Saturday'
+// 7 = 'Sunday'
+
+//example input getDayOfTheWeek(1)
+//output should be Monday.
+
+//example input getDayOfTheWeek(8)
+//output should be our of range
+
