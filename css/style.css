@@ -1,0 +1,46 @@
+/*
+multi
+line
+comment
+*/
+
+@keyframes picturePop {
+    0%{
+        /*transform: scale(0.1) translate(100%, 100%);*/
+        transform: matrix(1,2,3,4,5,6);
+        opacity: 5%;
+    }
+    60%{
+        /*transform: scale(1);*/
+        transform: matrix(1,2);
+        opacity: 70%;
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+div {
+    animation: picturePop 5s;
+}
+
+div>p {
+    animation: picturePop 8s;
+}
+
+
+
+
+h1 {
+    text-align: center;
+}
+
+.fancy-header {
+    color: mediumpurple; /* single line comment */
+    text-decoration: underline;
+}
+
+body {
+    /*background-color: cornsilk;*/
+    background-image: url("../img/jarvis-wallpapers.jpg");
+}
