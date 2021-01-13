@@ -4,6 +4,10 @@ line
 comment
 */
 
+* {
+    font-family: 'Audiowide', cursive;
+}
+
 @keyframes picturePop {
     0%{
         /*transform: scale(0.1) translate(100%, 100%);*/
@@ -12,7 +16,7 @@ comment
     }
     60%{
         /*transform: scale(1);*/
-        transform: matrix(1,2);
+        transform: matrix(1);
         opacity: 70%;
     }
     100%{
@@ -20,27 +24,60 @@ comment
     }
 }
 
+table,th,td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
 div {
     animation: picturePop 5s;
 }
+
 
 div>p {
     animation: picturePop 8s;
 }
 
 
+ul.a {
+    list-style-type: cjk-ideographic;
+}
+
+
+ul.b {
+    list-style-type: upper-roman;
+}
 
 
 h1 {
     text-align: center;
 }
 
+
 .fancy-header {
     color: mediumpurple; /* single line comment */
     text-decoration: underline;
 }
 
+
 body {
-    /*background-color: cornsilk;*/
-    background-image: url("../img/jarvis-wallpapers.jpg");
+    background-color: aliceblue;
+    background-image: url('../img/jarvis.png');
+    background-blend-mode: overlay;
 }
+
+
+a:link {
+    color: blue;
+}
+a:visited {
+    color: rebeccapurple;
+}
+a:hover {
+    color: green;
+}
+a:active {
+    color: cadetblue;
+}
+
+
