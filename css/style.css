@@ -10,12 +10,12 @@ comment
 
 @keyframes picturePop {
     0%{
-        /*transform: scale(0.1) translate(100%, 100%);*/
-        transform: matrix(1,2,3,4,5,6);
+        transform: scale(0.1) translate(100%, 100%);
+        /*transform: matrix(2,1,1,2,2,2);*/
         opacity: 5%;
     }
     60%{
-        /*transform: scale(1);*/
+        /*transform: scale(.8);*/
         transform: matrix(1);
         opacity: 70%;
     }
@@ -24,18 +24,18 @@ comment
     }
 }
 
-table,th,td {
-    border: 1px solid black;
-    padding: 5px;
-}
-
 div {
     animation: picturePop 5s;
 }
 
-
 div>p {
     animation: picturePop 8s;
+}
+
+
+table,th,td {
+    border: 1px solid black;
+    padding: 5px;
 }
 
 
