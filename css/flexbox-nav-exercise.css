@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    list-style: none;
 }
 
 nav {
@@ -15,13 +16,14 @@ ul {
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center;
 }
 
 nav a {
     text-decoration: none;
     color: black;
     display: inline-block;
-    padding: 1em;
+    padding: 20px;
     font-size: small;
 }
 
@@ -29,6 +31,17 @@ nav a:hover {
     background-color: lightskyblue;
 }
 
-nav ul li:nth-child(5) {
+nav b {
+    text-decoration: none;
+    color: black;
+    padding: .2em;
+    font-size: 3em;
+}
+
+nav ul li:nth-child(6) {
     margin-left: auto;
+}
+
+nav ul li:nth-child(4) {
+    margin-right: auto;
 }
