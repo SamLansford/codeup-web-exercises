@@ -1,0 +1,33 @@
+body {
+    width: 100%;
+}
+
+jumbotron-fluid {
+    padding-left: 4.5em;
+    padding-right: 5em;
+    width: 76%;
+    opacity: 50%;
+    background-color: ghostwhite;
+    /*padding-bottom: 5em;*/
+    horiz-align:center;
+}
+
+
+h1 {
+    display: flex;
+    justify-content: center;
+
+}
+
+ul>li:first-child:hover {
+    background-color: lightgray;
+}
+
+ul>li:nth-child(2):hover {
+    background-color: lightgray;
+}
+
+nav {
+    margin-top: 1px;
+    border-top: 2px solid gray;
+}
