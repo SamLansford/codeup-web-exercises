@@ -104,6 +104,7 @@
                         </ul>
                     </div>
                     <div class="card-footer text-right">
+
                         <button class="btn btn-primary">Next Step ></button>
                     </div>
 
@@ -134,27 +135,35 @@
                                 </select>
                             </div>
                         </div>
+
                         <div class="card">
                             <div class="card-header">
                                 Sauce
                             </div>
                             <div class="card-body">
-                                Thin enough for optimum crispy to crunchy ratio.
+                                <label for="sauce-type">What Type?</label>
+                                <select name="sauce-type" class="form-control " id="sauce-type">
+                                    <option value="sauce-tomato">Tomato Sauce</option>
+                                    <option value="sauce-marinara">Marinara Sauce</option>
+                                    <option value="sauce-bbq">BBQ Sauce</option>
+                                    <option value="sauce-alfredo">Alfredo Sauce</option>
+                                </select>
                             </div>
                         </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <input type="radio" name="thin" id="thin-med">
-                                <label for="thin-med">Medium (12")</label>
-                            </li>
-                            <li class="list-group-item">
-                                <input type="radio" name="thin" id="thin-lg">
-                                <label for="thin-lg">Large (14")</label>
-                            </li>
-                        </ul>
+                        <div class="card-body border">
+                            <label for="sauce-amt">How Much?</label>
+                            <select name="sauce-amt" class="form-control " id="sauce-amt">
+                                <option value="sauce-light">Light</option>
+                                <option value="sauce-normal">Normal</option>
+                                <option value="sauce-extra">Extra</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="card-footer text-right">
+                        <div class="btn-group">
+                        <button class="btn btn-primary"> Previous Step</button>
                         <button class="btn btn-primary">Next Step ></button>
+                        </div>
                     </div>
 
                 </div>
@@ -171,25 +180,18 @@
                     <div class="card-body">
                         <div class="card mb-3">
                             <div class="card-header">
-                                Hand Tossed
-                            </div>
-                            <div class="card-body">
-                                Garlic seasoned crust with a rich, buttery taste.
+                                Choose Meats
                             </div>
                             <ul class="list-group">
-                                <li class="list-group-item">
-                                    <input type="radio" name="crust" id="hand-sm">
-                                    <label for="hand-sm">Small (10")</label>
-                                </li>
-                                <li class="list-group-item">
-                                    <input type="radio" name="crust" id="hand-md">
-                                    <label for="hand-md">Medium (10")</label>
-                                </li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
                             </ul>
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                Crispy Thin
+                                Choose Non-Meats
                             </div>
                             <div class="card-body">
                                 Thin enough for optimum crispy to crunchy ratio.
