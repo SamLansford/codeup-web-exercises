@@ -41,19 +41,38 @@
         subHeader.style.color = "blue"
 
         // TODO: Uncomment the next line and get all list items
-        let listItems = document.getElementsByTagName("li")
+        let listItems = Array.from(document.getElementsByTagName("li"))
 
         // TODO: Set text color on every other list item to grey
-        listItems
+
+        let makeGray = true;
+
+        listItems.forEach((li) => {
+            if (makeGray)
+                li.style.color = "gray"
+            makeGray = !makeGray
+            if (li.getAttribute("data-dbid") === "1") {
+                li.style.color = "blue"
+            }
+        })
+
+        // for (let i = 0; i < listItems.length; i+=1) {
+        //     if (i % 2 !== 0) {
+        //         listItems[i].style.color = "grey";
+        //     }
+        //     if (listItems[i].getAttribute('data-dbid') === "1"){
+        //         li.style.color = "blue"
+        //     }
+        // }
 
         // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style.color = "blue"
+
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         let subParagraphs = document.querySelectorAll(".sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        document.getElementsByClassName("sub-paragraph").innerHTML = "Mission Accomplished!"
+        Array.from(document.getElementsByClassName("sub-paragraph"))[0].innerHTML = "Mission Accomplished!"
 
     })();
 </script>
