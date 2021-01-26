@@ -11,3 +11,12 @@ function isFactor (x,y) {
 }
 
 console.log(isFactor(2,5))
+
+
+// write a JavaScript function that takes in an array as an argument, and returns a new array containing the first and the last elements of the passed array.
+
+function firstLastOfArray(arr) {
+    let bucket = [];
+    bucket.push(arr[0])
+    bucket
+}
