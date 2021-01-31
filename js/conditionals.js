@@ -205,3 +205,11 @@ var i = randomNumber;
 function sayHello(name) {
     return "Hello, " + name + "!";
 }
+function randomPositiveEvenNumber() {
+    var randomNumber = Math.ceil(Math.random() * 100) + 10;
+    if(randomNumber % 2 !== 0) {
+        return randomPositiveEvenNumber()
+    }
+
+    return randomNumber;
+}
