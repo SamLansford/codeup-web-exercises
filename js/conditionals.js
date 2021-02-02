@@ -213,3 +213,7 @@ function randomPositiveEvenNumber() {
 
     return randomNumber;
 }
+
+function plusTwo(x) {
+    return x + 2;
+}
