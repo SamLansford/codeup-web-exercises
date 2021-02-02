@@ -14,7 +14,7 @@
 $(document).ready(function() {
     $(".coffeeType").css("fontSize","20px");
     $("h1,p,li").css({"border": "5px solid pink", "backgroundColor": "lightyellow", "color": "orange"})
-    alert($(""))
+    alert($("#h1").html());
 
 
     // var combined = $('h1, p, ul').css({
