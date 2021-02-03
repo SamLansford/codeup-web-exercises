@@ -20,20 +20,20 @@
 
 
 // MouseEvent
-// (function (){
-//     let h1Background = $(".codeup");
-//     let backgroundBlue = "lightblue";
-//     let backgroundReset = "";
-//
-//     function addClickEvents() {
-//         let handlerReset = function (){
-//
-//         }
-//         let handlerBlueBckGnd = function (){
-//             // elementsToBind.css("background-color", backgroundReset);
-//             $(this).css("background-color",backgroundBlue);
-//         }
-//         elementsToBind.click(handlerBlueBckGnd);
-//     }
-//     addClickEvents(h1Background);
-// })();
+$(".codeup").click(function (){
+    $(".codeup").css("background-color","yellow")
+});
+
+$('li').dblclick(function (){
+    $('li').css("font-size",'18px');
+})
+
+
+$('li').hover(
+    function() {
+        $(this).css('background-color', 'yellow');
+    },
+    function() {
+        $(this).css('background-color', 'pink');
+    }
+);
