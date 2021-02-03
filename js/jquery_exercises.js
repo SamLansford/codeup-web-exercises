@@ -1,5 +1,6 @@
 "use strict";
 
+// selectors
 // $(document).ready(function() {
     // var idContent = $("#light-coffee").html();
     // alert(idContent);
@@ -11,16 +12,28 @@
     // $(".codeup").css({"border": "5px solid pink", "backgroundColor": "lightyellow", "color": "orange"});
 // });
 
-$(document).ready(function() {
-    $(".coffeeType").css("fontSize","20px");
-    $("h1,p,li").css({"border": "5px solid pink", "backgroundColor": "lightyellow", "color": "orange"})
-    alert($("#h1").html());
+// $(document).ready(function() {
+//     $(".coffeeType").css("fontSize","20px");
+//     $("h1,p,li").css({"border": "5px solid pink", "backgroundColor": "lightyellow", "color": "orange"})
+//     alert($("#h1").html());
+// });
 
 
-    // var combined = $('h1, p, ul').css({
-    //     'background-color': 'blue',
-    //     'border': '5px solid gold',
-    //     'color': 'white',
-    //     'font-size': '20px',
-    // });
-});
+// MouseEvent
+// (function (){
+//     let h1Background = $(".codeup");
+//     let backgroundBlue = "lightblue";
+//     let backgroundReset = "";
+//
+//     function addClickEvents() {
+//         let handlerReset = function (){
+//
+//         }
+//         let handlerBlueBckGnd = function (){
+//             // elementsToBind.css("background-color", backgroundReset);
+//             $(this).css("background-color",backgroundBlue);
+//         }
+//         elementsToBind.click(handlerBlueBckGnd);
+//     }
+//     addClickEvents(h1Background);
+// })();
