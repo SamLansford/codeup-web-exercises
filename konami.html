@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<section class="row">
+    <div class="col">
+        <h2>Enter konami code</h2>
+        <form action="" method="POST" name="user">
+            <div class="form-group">
+                <label for="text">Enter Konami code</label>
+                <input class="form-control" type="text" name="first" id="text" placeholder="Enter the code" autocomplete="off">
+            </div>
+            <button type="button" class="btn btn-primary btn-block" id="submitBtn">Submit</button>
+        </form>
+    </div>
+</section>
+
+<script src="js/jquery-3.5.1.js"></script>
+
+
+<script>
+"use strict";
+
+var pressedKeys = [];
+
+$(document).keyup(function (event){
+    pressedKeys.push(event.keyCode)
+    console.log(pressedKeys);
+    if (JSON.stringify(konamiCode) === JSON.stringify(pressedKeys)) {
+        $("body").css("background-image", "url('img/extra_life.png')").css({"background-size":"30%"});
+        alert("You have added 30 lives!")
+    }
+})
+
+var konamiCode = [38,38,40,40,37,39,37,39,66,65,13];
+</script>
+
+</body>
+</html>
