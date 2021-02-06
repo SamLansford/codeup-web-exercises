@@ -15,7 +15,13 @@
         }
 
         table {
-            border-spacing: 40px;
+            border-spacing: 20px;
+        }
+
+        button {
+            display: flex;
+            margin: auto;
+            margin-top: 2em;
         }
     </style>
 <!--HTML-->
@@ -35,7 +41,7 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-<button id="refresh"></button>
+<button id="refresh" type="button">refresh</button>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
@@ -65,15 +71,19 @@
             html += "<th>" + tool.price + "</th>"
             html += "<th>" + tool.categories + "</th>"
             html += "</tr>"
-        })
+
+        });
         $("#insertProducts").html(html);
     }
-    $("#refresh").click(function (){
 
+    $("#refresh").click(function (){
+        $.get("data/inventory.json")
+        .done(handlerResponse);
     })
 
-
 })();
+
+
 </script>
 
 </body>

@@ -37,5 +37,26 @@
             "tool"
         ],
         "price": 35
+    }, {
+        "title": "Nail",
+        "quantity": 250,
+        "categories": [
+            "tool"
+        ],
+        "price": 0.5
+    }, {
+        "title": "Nut",
+        "quantity": 250,
+        "categories": [
+            "tool"
+        ],
+        "price": 0.75
+    }, {
+        "title": "Nut",
+        "quantity": 250,
+        "categories": [
+            "tool"
+        ],
+        "price": 0.75
     }
 ]
