@@ -1,70 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>AJax Blog</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
+    <title>Online Store</title>
+    <!--    CSS-->
     <style>
-        div {
-            display: flex;
-            justify-content: space-evenly;
-            margin-top: 1em;
+        h1 {
+            text-align: center;
+        }
+
+        table, tr, th {
+            margin: auto;
+            border: 1px solid lightpink;
+            padding: 20px;
+            background-color: lightpink;
+        }
+
+        table {
+            border-spacing: 20px;
         }
 
         button {
             display: flex;
-            margin:auto;
+            margin: auto;
             margin-top: 2em;
         }
 
-        div section {
-            display: flex;
-            flex-direction: column;
+        body {
+            background-color: lightgoldenrodyellow;
         }
     </style>
-
-
+    <!--HTML-->
 </head>
 <body>
 
-<h1 class="text-center mt-2">My Blog Posts</h1>
-
+<h1>My Blog Posts</h1>
 <div id="posts">
-    <section>title</section>
-    <section>content</section>
-    <section>categories</section>
-    <section>date</section>
+<table id="posting">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Categories</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody id="insertPosts"></tbody>
+</table>
 </div>
-
-<button id="post">post</button>
+<button id="refresh" type="button">refresh</button>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
+<!--JavaScript-->
 <script>
-(function() {
-    "use strict"
+    (function() {
+        "use strict";
 
-    $(document).ready(function (){
-        $.get("data/blog.json")
-        .done(handlerResponse)
-    })
+        $(document).ready(function (){
+            $.get("data/blog.json")
+                .done(handlerResponse);
+        })
 
-    function handlerResponse(posts) {
-        let html = '';
-        posts.forEach(function (post){
-            html += "<div>"
-            html += "<section>" + post.title + "</section>"
-            html += "<section>" + post.content + "</section>"
-            html += "<section>" + post.categories + "</section>"
-            html += "<section>" + post.date + "</section>"
-            html += "</div>"
-        });
-        $("#posts").html(html)
-    }
+        function handlerResponse(posts) {
+            let html = "";
+            console.log(posts);
+            posts.forEach(function (post){
+                html += "<tr>"
+                html += "<th>" + post.title + "</th>"
+                html += "<th>" + post.content + "</th>"
+                html += "<th>" + post.categories + "</th>"
+                html += "<th>" + post.date + "</th>"
+                html += "</tr>"
 
-})()
+            });
+            $("#insertPosts").html(html);
+        }
+
+        $("#refresh").click(function (){
+            $.get("data/blog.json")
+                .done(handlerResponse);
+        })
+
+    })();
+
+
 </script>
 
 </body>
