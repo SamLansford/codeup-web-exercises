@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox api</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id='mapbox-map' style='width: 120vh; height: 70vh; margin: 15vh auto; border: 5px solid saddlebrown;'></div>
+<script src="js/mapbox_maps_api.js"></script>
+<script src="js/keys.js"></script>
+
+<script>
+    mapboxgl.accessToken = mapboxToken
+    var map = new mapboxgl.Map({
+        container: 'mapbox-map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4936, 29.4241], // starting position [lng, lat]
+        zoom: 10 // starting zoom
+    });
+    map.addControl(new mapboxgl.NavigationControl());
+
+    var popup = new mapboxgl.Popup({ offset: 25}).setHTML(
+        '<p id="asian-restaurant">huhot</p>'
+    );
+
+    var favRestaurant1 = new mapboxgl.Popup({ offset: 25}).setHTML(
+        '<p id="fav1">KongFu Noodles</p>'
+    );
+
+    var favRestaurant2 = new mapboxgl.Popup({ offset: 25}).setHTML(
+        '<p id="fav2">ShiFu Noodles</p>'
+    );
+
+    var myLocationPopup = new mapboxgl.Popup({ offset: 25}).setHTML(
+        '<p id="current">current location</p>'
+    );
+
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-98.4936, 29.4241])
+        .setPopup(myLocationPopup)
+        .addTo(map)
+
+
+    geocode("12710 IH 10 W SAN ANTONIO, TEXAS 78230", mapboxToken).then(function (data) {
+        var huHotMarker = new mapboxgl.Marker()
+            .setLngLat(data)
+            .setPopup(popup)
+            .addTo(map)
+    });
+
+    geocode("6733 Bandera Rd, San Antonio, TX 78238", mapboxToken).then(function (data) {
+        var huHotMarker = new mapboxgl.Marker()
+            .setLngLat(data)
+            .setPopup(favRestaurant1)
+            .addTo(map)
+    });
+
+    geocode("3850 S New Braunfels Ave, San Antonio, TX 78223", mapboxToken).then(function (data) {
+        var huHotMarker = new mapboxgl.Marker()
+            .setLngLat(data)
+            .setPopup(favRestaurant2)
+            .addTo(map)
+    });
+
+
+</script>
+
+</body>
+</html>
