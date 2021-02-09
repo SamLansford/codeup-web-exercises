@@ -44,12 +44,12 @@ var favRestaurants = [
     }
 ]
 
-favRestaurants.forEach(function (restaurant){
+favRestaurants.forEach(function (favRestaurant){
     let popup = new mapboxgl.Popup()
-        .setHTML('<h3>${restaurant.name}</h3><br></p>${restaurant.information}</p>' +
-            '<img src="img/huhot.png" width="50px">')
+        .setHTML('<h2>'+ favRestaurant.name + '</h2>' +
+            '<p>' + favRestaurant.information + '</p>')
     new mapboxgl.Marker()
-        .setLngLat(restaurant.location)
+        .setLngLat(favRestaurant.location)
         .setPopup(popup)
         .addTo(map)
 })
