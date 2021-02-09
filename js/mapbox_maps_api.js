@@ -44,13 +44,11 @@ var favRestaurants = [
     }
 ]
 
-favRestaurants.forEach(function (restaurant){
-    let popup = new mapboxgl.Popup()
-        .setHTML(`<p>${restaurant.name}<br>${restaurant.information}</p>`)
-    new mapboxgl.Marker()
-        .setLngLat(restaurant.location)
-        .setPopup(popup)
-        .addTo(map)
-}
-
-)
+// favRestaurants.forEach(function (restaurant){
+//     let popup = new mapboxgl.Popup()
+//         .setHTML(`<h3>${restaurant.name}</h3><br><p></p>${restaurant.information}</p>`)
+//     new mapboxgl.Marker()
+//         .setLngLat(restaurant.location)
+//         .setPopup(popup)
+//         .addTo(map)
+// })
