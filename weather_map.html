@@ -18,8 +18,8 @@
 </nav>
 <nav class="navbar navbar-light bg-light">
     <form class="form-inline">
-       place <input class="form-control mr-sm-2 mx-3c" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+       place <input id="type-in" class="form-control mr-sm-2 mx-3" type="search" placeholder="Search" aria-label="Search">
+        <button id="button" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 </nav>
 <div id="display-map" class="d-flex justify-content-around mt-5"></div>
@@ -32,53 +32,78 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
+<script src="js/geocode.js"></script>
 
 
 <script>
 
-    $.get("https://api.openweathermap.org/data/2.5/onecall", {
-        APPID: OWM_TOKEN,
-        lat: 29.4241,
-        lon: -98.4936,
-        units: "imperial",
-        exclude: "minutely,hourly"
-    }).done(function (data) {
-        console.log(data);
-        let html = '';
-        for (let i = 0; i < 5; i++) {
-            let icon = data.daily[i].weather[0].icon
-            let unixTime = data.daily[i].dt;
-            let date = new Date(unixTime * 1000);
-            let date1 = date.toLocaleDateString("en-US")
-            html += "<div class='card' style='width: 16rem'>"
-            html += "<div class='card-header'>" + date1 + "</div>"
-            html += "<ul class='list-group list-group-flush'>"
-            html += "<li class='list-group-item text-center'>" + data.daily[i].temp.day + "℉" + ' / ' + data.daily[i].temp.night + "℉" + "<br>" + "<img src='http://openweathermap.org/img/wn/" + icon + ".png'>" + "</li>"
-            html += "<li class='list-group-item text-center'>" +
-                "description: " + "<strong>" + data.daily[i].weather[0].description + "</strong>"+ "<br>" +
-                "Humidity: " + "<strong>" + data.daily[i].humidity + "</strong>" +
-                "</li>"
-            html += "<li class='list-group-item text-center'>" + "Wind: " + "<strong>" + data.daily[i].wind_speed + "</strong>" + "</li>"
-            html += "<li class='list-group-item text-center'>" + "Pressure: " + "<strong>" + data.daily[i].pressure + "</strong>" + "</li>"
-            html += "</ul>"
-            html += "</div>"
-        }
-        $("#display-map").html(html)
+    displayPage(29.4241,-98.4936);
+    function displayPage(lat,lng) {
+        $.get("https://api.openweathermap.org/data/2.5/onecall", {
+            APPID: OWM_TOKEN,
+            lat: lat,
+            lon: lng,
+            units: "imperial",
+            exclude: "minutely,hourly"
+        }).done(function (data) {
+            console.log(data);
 
-    });
+            let html = '';
+            for (let i = 0; i < 5; i++) {
+                let icon = data.daily[i].weather[0].icon
+                let unixTime = data.daily[i].dt;
+                let date = new Date(unixTime * 1000);
+                let date1 = date.toLocaleDateString("en-US")
+                html += "<div class='card' style='width: 16rem'>"
+                html += "<div class='card-header'>" + date1 + "</div>"
+                html += "<ul class='list-group list-group-flush'>"
+                html += "<li class='list-group-item text-center'>" + data.daily[i].temp.day + "℉" + ' / ' + data.daily[i].temp.night + "℉" + "<br>" + "<img src='http://openweathermap.org/img/wn/" + icon + ".png'>" + "</li>"
+                html += "<li class='list-group-item text-center'>" +
+                    "description: " + "<strong>" + data.daily[i].weather[0].description + "</strong>" + "<br>" +
+                    "Humidity: " + "<strong>" + data.daily[i].humidity + "</strong>" +
+                    "</li>"
+                html += "<li class='list-group-item text-center'>" + "Wind: " + "<strong>" + data.daily[i].wind_speed + "</strong>" + "</li>"
+                html += "<li class='list-group-item text-center'>" + "Pressure: " + "<strong>" + data.daily[i].pressure + "</strong>" + "</li>"
+                html += "</ul>"
+                html += "</div>"
+            }
+            $("#display-map").html(html)
 
-    mapboxgl.accessToken = MAPBOX_TOKEN
-    const map = new mapboxgl.Map({
-        container: 'mapbox-map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.4936, 29.4241], // starting position [lng, lat]
-        zoom: 10 // starting zoom
-    });
-    map.addControl(new mapboxgl.NavigationControl());
+        });
+    }
 
-    $.get("https://api.openweathermap.org/data/2.5/onecall?lat=29.4241&lon=-98.4936&units=imperial&exclude=minutely,hourly&appid=" + OWM_TOKEN).done(function (data) {
-        console.log(data);
-    });
+        mapboxgl.accessToken = MAPBOX_TOKEN
+        const map = new mapboxgl.Map({
+            container: 'mapbox-map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [-98.4936, 29.4241], // starting position [lng, lat]
+            zoom: 10 // starting zoom
+        });
+        map.addControl(new mapboxgl.NavigationControl());
+
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([-98.4936, 29.4241])
+            .addTo(map)
+
+            $("#button").click(function (e){
+                e.preventDefault();
+                var message = $("#type-in").val()
+                geocode(message,MAPBOX_TOKEN).then(function (data){
+                    displayPage(data[1],data[0]);
+                    map.flyTo({
+                        center: [
+                            data[0], data[1],
+                        ],
+                        essential: true,
+                        zoom: 11,
+                    });
+                    marker.add(data[1],data[0],map)
+                })
+
+            });
+
 
 </script>
 
