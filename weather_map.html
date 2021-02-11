@@ -13,18 +13,18 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <p class="text-left" id="nav-color">Weather app</p>
-        <p class="text-right" id="text-color">current location:</p>
+        <p class="text-right" id="current">current location:</p>
     </div>
 </nav>
 <nav class="navbar navbar-light bg-light">
     <form class="form-inline">
        place <input id="type-in" class="form-control mr-sm-2 mx-3" type="search" placeholder="Search" aria-label="Search">
-        <button id="button" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button id="button" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
     </form>
 </nav>
 <div id="display-map" class="d-flex justify-content-around mt-5"></div>
 
-<div id='mapbox-map' style='width: 90%; height: 70vh; margin: 5vh auto;'></div>
+<div class="coordinates" id='mapbox-map' style='width: 90%; height: 70vh; margin: 5vh auto;'></div>
 <!--<div id='mapbox-map' style='width: 120vh; height: 70vh; margin: 15vh auto; border: 5px solid saddlebrown;'></div>-->
 
 <script src="js/jquery-3.5.1.js"></script>
@@ -37,8 +37,11 @@
 
 <script>
 
-    displayPage(29.4241,-98.4936);
-    function displayPage(lat,lng) {
+    var lat = 29.4241;
+    var lng = -98.4936;
+
+    displayPage();
+    function displayPage() {
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             APPID: OWM_TOKEN,
             lat: lat,
@@ -57,7 +60,7 @@
                 html += "<div class='card' style='width: 16rem'>"
                 html += "<div class='card-header'>" + date1 + "</div>"
                 html += "<ul class='list-group list-group-flush'>"
-                html += "<li class='list-group-item text-center'>" + data.daily[i].temp.day + "℉" + ' / ' + data.daily[i].temp.night + "℉" + "<br>" + "<img src='http://openweathermap.org/img/wn/" + icon + ".png'>" + "</li>"
+                html += "<li class='list-group-item text-center'>" + data.daily[i].temp.max + "℉" + ' / ' + data.daily[i].temp.min + "℉" + "<br>" + "<img src='http://openweathermap.org/img/wn/" + icon + ".png'>" + "</li>"
                 html += "<li class='list-group-item text-center'>" +
                     "description: " + "<strong>" + data.daily[i].weather[0].description + "</strong>" + "<br>" +
                     "Humidity: " + "<strong>" + data.daily[i].humidity + "</strong>" +
@@ -76,7 +79,7 @@
         const map = new mapboxgl.Map({
             container: 'mapbox-map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
-            center: [-98.4936, 29.4241], // starting position [lng, lat]
+            center: [lng, lat], // starting position [lng, lat]
             zoom: 10 // starting zoom
         });
         map.addControl(new mapboxgl.NavigationControl());
@@ -84,8 +87,21 @@
         var marker = new mapboxgl.Marker({
             draggable: true
         })
-            .setLngLat([-98.4936, 29.4241])
+            .setLngLat([lng, lat])
             .addTo(map)
+
+        function onDragEnd() {
+            var lngLat = marker.getLngLat();
+            lat = lngLat.lat
+            lng = lngLat.lng
+            reverseGeocode(lngLat,MAPBOX_TOKEN).then(function (data){
+                $("#type-in").val(data)
+                // $("#current").html("Current Location: " + data)
+                // displayPage()
+            })
+        }
+
+        marker.on('dragend', onDragEnd);
 
             $("#button").click(function (e){
                 e.preventDefault();
@@ -97,13 +113,14 @@
                             data[0], data[1],
                         ],
                         essential: true,
-                        zoom: 11,
+                        zoom: 13,
                     });
-                    marker.add(data[1],data[0],map)
-                })
-
+                    marker.setLngLat([
+                        data[0], data[1]
+                    ]);
+                    marker.addTo(map);
+                });
             });
-
 
 </script>
 
