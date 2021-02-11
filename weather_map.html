@@ -51,6 +51,9 @@
             units: "imperial",
             exclude: "minutely,hourly"
         }).done(function (data) {
+            reverseGeocode({lng, lat}, MAPBOX_TOKEN).then(function (data) {
+                $("#current").text("Current Location: " + data )
+            })
             console.log(data);
 
             let html = '';
@@ -59,7 +62,7 @@
                 let unixTime = data.daily[i].dt;
                 let date = new Date(unixTime * 1000);
                 let date1 = date.toLocaleDateString("en-US")
-                html += "<div class='card' style='width: 16rem'>"
+                html += "<div class='card' style='width: 15rem'>"
                 html += "<div class='card-header'>" + date1 + "</div>"
                 html += "<ul class='list-group list-group-flush'>"
                 html += "<li class='list-group-item text-center'>" + data.daily[i].temp.max + "℉" + ' / ' + data.daily[i].temp.min + "℉" + "<br>" + "<img src='http://openweathermap.org/img/wn/" + icon + ".png'>" + "</li>"
