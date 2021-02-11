@@ -18,7 +18,8 @@
 </nav>
 <nav class="navbar navbar-light bg-light">
     <form class="form-inline">
-       place <input id="type-in" class="form-control mr-sm-2 mx-3" type="search" placeholder="Search" aria-label="Search">
+        place <input id="type-in" class="form-control mr-sm-2 mx-3" type="search" placeholder="Search"
+                     aria-label="Search">
         <button id="button" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
     </form>
 </nav>
@@ -41,6 +42,7 @@
     var lng = -98.4936;
 
     displayPage();
+
     function displayPage() {
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             APPID: OWM_TOKEN,
@@ -75,52 +77,53 @@
         });
     }
 
-        mapboxgl.accessToken = MAPBOX_TOKEN
-        const map = new mapboxgl.Map({
-            container: 'mapbox-map', // container ID
-            style: 'mapbox://styles/mapbox/streets-v11', // style URL
-            center: [lng, lat], // starting position [lng, lat]
-            zoom: 10 // starting zoom
-        });
-        map.addControl(new mapboxgl.NavigationControl());
+    mapboxgl.accessToken = MAPBOX_TOKEN
+    const map = new mapboxgl.Map({
+        container: 'mapbox-map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [lng, lat], // starting position [lng, lat]
+        zoom: 10 // starting zoom
+    });
+    map.addControl(new mapboxgl.NavigationControl());
 
-        var marker = new mapboxgl.Marker({
-            draggable: true
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([lng, lat])
+        .addTo(map)
+
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        lat = lngLat.lat
+        lng = lngLat.lng
+        reverseGeocode(lngLat, MAPBOX_TOKEN).then(function (data) {
+            $("#type-in").val(data)
+            $("#current").text("Current Location: " + data)
+            displayPage()
         })
-            .setLngLat([lng, lat])
-            .addTo(map)
+    }
 
-        function onDragEnd() {
-            var lngLat = marker.getLngLat();
-            lat = lngLat.lat
-            lng = lngLat.lng
-            reverseGeocode(lngLat,MAPBOX_TOKEN).then(function (data){
-                $("#type-in").val(data)
-                // $("#current").html("Current Location: " + data)
-                // displayPage()
-            })
-        }
+    marker.on('dragend', onDragEnd);
 
-        marker.on('dragend', onDragEnd);
-
-            $("#button").click(function (e){
-                e.preventDefault();
-                var message = $("#type-in").val()
-                geocode(message,MAPBOX_TOKEN).then(function (data){
-                    displayPage(data[1],data[0]);
-                    map.flyTo({
-                        center: [
-                            data[0], data[1],
-                        ],
-                        essential: true,
-                        zoom: 13,
-                    });
-                    marker.setLngLat([
-                        data[0], data[1]
-                    ]);
-                    marker.addTo(map);
-                });
+    $("#button").click(function (e) {
+        e.preventDefault();
+        var message = $("#type-in").val()
+        geocode(message, MAPBOX_TOKEN).then(function (data) {
+            displayPage(data[1], data[0]);
+            $("#current").text("Current Location: " + message)
+            map.flyTo({
+                center: [
+                    data[0], data[1],
+                ],
+                essential: true,
+                zoom: 8,
             });
+            marker.setLngLat([
+                data[0], data[1]
+            ]);
+            marker.addTo(map);
+        });
+    });
 
 </script>
 
