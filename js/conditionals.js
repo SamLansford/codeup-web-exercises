@@ -217,3 +217,5 @@ function randomPositiveEvenNumber() {
 function plusTwo(x) {
     return x + 2;
 }
+
+const phraseSplitterEs6 = phrase => phrase.split(" ");
