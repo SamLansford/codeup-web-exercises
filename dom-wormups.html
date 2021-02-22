@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM Manipulation Warmups</title>
+
+    <style>
+        .letter {
+            cursor: crosshair;
+        }
+        .title-letter {
+            color: firebrick;
+            font-size: 3em;
+        }
+    </style>
+
 </head>
 <body>
 
+<h1>
+    <span class="letter">D</span><span class="letter">O</span><span class="letter">M</span>
+    <span class="letter">W</span><span class="letter">a</span><span class="letter">r</span><span class="letter">m</span>
+    <span class="letter">U</span><span class="letter">p</span><span class="letter">s</span>
+</h1>
+<h3>Letter from title in lowercase: <span class="title-letter"></span></h3>
 <h1>The sum is: <span id="sum-output">0</span></h1>
 <label for="number">Number</label>
 <input id="number" type="number" name="number" min="0" max="5" value="0">
@@ -25,12 +42,20 @@
         $("#sum-output").text($result);
     })
 
-    let message = '';
-    const names = ['John', 'Paul', 'George', 'Ringo'];
-    for (let name of names) {
-        message += `Hello, ${name}\n`
-    }
-    console.log(message)
+    /*
+    TODO: add the needed JS so that when the cursor hovers over a letter in the h1 title,
+     the letter will appear in the span with a class of `title-letter`, in lowercase.
+     When the cursor is not hovering over a letter in the h1 title, no letter should be
+     displayed in the span with a class of `title-letter`.
+    */
+
+    $(".letter").hover(function () {
+        let $showLowerCase = $(this).text().toLowerCase();
+        $(".title-letter").text($showLowerCase);
+    },
+        function () {
+        $(".title-letter").text('')
+    })
 
 </script>
 
