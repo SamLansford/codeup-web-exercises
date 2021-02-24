@@ -16,7 +16,7 @@
         integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
         crossorigin="anonymous"></script>
 <script>
-"use strict"
+    "use strict"
     // ====================================================================================
     // ==================================== PROMISES ======================================
     // ====================================================================================
@@ -62,34 +62,34 @@
     //     console.log(err);
     // });
     // -------- MINI EXERCISE 1
-    const isGoodDog = true;
-    /* TODO: Uncomment the line above then create a promise, haveTreat, that resolves with the string 'Good dog; have treat'
-        if the above constant is assigned to true and and rejects with the string 'Bad dog; no treat' if assigned false.
-     */
+    // const isGoodDog = false;
+    // /* TODO: Uncomment the line above then create a promise, haveTreat, that resolves with the string 'Good dog; have treat'
+    //     if the above constant is assigned to true and and rejects with the string 'Bad dog; no treat' if assigned false.
+    //  */
+    //
+    // const haveTreat = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         if (isGoodDog) {
+    //             resolve("Good dog; have treat");
+    //         } else {
+    //             reject("Bad doggo; you get no treat")
+    //         }
+    //     }, 5000);
+    // });
+    // console.log(haveTreat);
 
-    const haveTreat = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (isGoodDog) {
-                resolve("Good dog; have treat");
-            } else {
-                reject("Bad doggo; you get no treat")
-            }
-        },5000);
-    });
-    console.log(haveTreat);
-
-// TODO: handle the promise by console logging the result if resolved or rejected
+    // TODO: handle the promise by console logging the result if resolved or rejected
     /* TODO: Refactor the promise above by wrapping the conditional logic of whether to resolve or reject
         in a setTimeout so that the promise will only resolve or reject after five seconds.
     */
 
-    haveTreat
-        .then(data => {
-            console.log(data)
-        })
-        .catch(err => {
-            console.log(err);
-        });
+    // haveTreat
+    //     .then(data => {
+    //         console.log(data)
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //     });
 
 
     // -------- MINI EXERCISE 2
@@ -98,12 +98,32 @@
         has an identical definition as the haveTreat promise from the previous mini exercise.
      */
 
-    
+    function trainDog(isGoodDog) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (isGoodDog) {
+                    resolve("Good dog; have treat");
+                } else {
+                    reject("Bad doggo; you get no treat")
+                }
+            }, 5000);
+        });
+
+    };
 
     /* TODO: invoke the trainDog function passing in true as and argument
         chain then and catch methods to handle the returned promise. Refactor
         to pass in false to the function.
      */
+
+    trainDog(true)
+        .then(data => {
+            console.log(data)
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
     // ====================================== FETCH API
     // ============ Fetch API
     // jQuery AJAX request example
@@ -119,7 +139,7 @@
     /* TODO: make a GET request using fetch to the url below to get an array of five cat fact objects.
         Log the text property of the first cat fact object. Be sure to log possible errors in a catch.
      */
-const catFactsURL = 'https://cat-fact.herokuapp.com/facts'
+    const catFactsURL = 'https://cat-fact.herokuapp.com/facts'
     // Fetch API POST example
     // fetch('https://hookb.in/eKZ0mV6k1aTr9g86Q7JM', {
     //     method: 'POST',
