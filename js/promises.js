@@ -38,3 +38,24 @@
 //
 // }
 // gitHub("SamLansford")
+
+const GITHUB_API_URL = 'https://api.github.com';
+
+function getDateOfLastCommit(username) {
+    const ENDPOINT = `/users/${username}/events/public`;
+    const CONFIG = {
+        header: {
+            'Authorization': `token${GITHUB_TOKEN}`
+        }
+    }
+
+    return fetch(GITHUB_API_URL + ENDPOINT, CONFIG)
+    .then(response => response.json())
+        .then(events => {
+            let mostRecentEvent = events.find((event) => event.type === "PushEvent")
+            console.log(mostRecentEvent)
+        });
+}
+
+getDateOfLastCommit("SamLansford");
+
