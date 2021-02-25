@@ -12,10 +12,7 @@
 </main>
 <script src="js/keys.js"></script>
 <script src="js/promises.js"></script>
-<script
-        src="https://code.jquery.com/jquery-3.4.0.min.js"
-        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
     "use strict"
     // ====================================================================================
@@ -41,7 +38,7 @@
     //         console.log(message);
     //     });
     // ============ Basic Example of Promise Creation and Handling
-    let goodKid = true;
+    // let goodKid = true;
     //
     // // Defining a promise
     // const getCake = new Promise((resolve, reject) => {
@@ -141,6 +138,19 @@
         Log the text property of the first cat fact object. Be sure to log possible errors in a catch.
      */
     // const catFactsURL = 'https://cat-fact.herokuapp.com/facts'
+    // fetch(catFactsURL)
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log(data);
+    //         console.log(data[0]);
+    //         return data[0]
+    //     })
+    //     // .then(data => {
+    //     //     console.log(data[0].text)
+    //     // })
+    //     .catch(console.error)
+
+
     // Fetch API POST example
     // fetch('https://hookb.in/eKZ0mV6k1aTr9g86Q7JM', {
     //     method: 'POST',
@@ -158,6 +168,25 @@
     /* TODO: Create a new endpoint on https://hookbin.com/ and use fetch to send some POST requests.
         Experiment with sending different shapes of data in the body of the request.
      */
+
+    // function fetchPost() {
+    //     let userName = prompt("Enter user name");
+    //     let password = prompt("Enter your password")
+    //     fetch('https://hookb.in/r1qpmVqVVpCzWWJVyPdn', {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             user: {
+    //                 userName,
+    //                 password
+    //             },
+    //         })
+    //     })
+    // }
+
+    // fetchPost()
     //  ============ NY Times Articles Based on Forecast of Current Location
     // function getForecast(coord) {
     //     return fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${darkSkyAPI}/${coord.lat},${coord.lng}`)
