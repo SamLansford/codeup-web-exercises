@@ -1,28 +1,27 @@
 "use strict";
 
-// function timeConvert(millisec) {
-//     return (millisec / 1000);
-// }
+function timeConvert(millisec) {
+    return (millisec / 1000);
+}
+
+function wait(num) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            if (num) {
+                resolve("You'll see this after " + timeConvert(num) + " seconds");
+            };
+        },num)
+    });
+};
 //
-// function wait(num) {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             if (num) {
-//                 resolve("You'll see this after " + timeConvert(num) + " seconds");
-//             } else {
-//                 reject("There is nothing to see here")
-//             };
-//         },num)
-//     });
-// };
-//
-// wait(3000)
-//     .then(data => {
-//         console.log(data);
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     })
+wait(3000)
+    .then(data => {
+        $('#page').html(data)
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
 
 // wait(1000).then(() => console.log('You\'ll see this after 1 second'));
 // wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
@@ -38,24 +37,26 @@
 //
 // }
 // gitHub("SamLansford")
+{
+    const GITHUB_API_URL = 'https://api.github.com';
 
-const GITHUB_API_URL = 'https://api.github.com';
-
-function getDateOfLastCommit(username) {
-    const ENDPOINT = `/users/${username}/events/public`;
-    const CONFIG = {
-        header: {
-            'Authorization': `token${GITHUB_TOKEN}`
+    function getDateOfLastCommit(username) {
+        const ENDPOINT = `/users/${username}/events/public`;
+        const CONFIG = {
+            headers: {
+                'Authorization': `token ${GITHUB_TOKEN}`
+            }
         }
+        return fetch(GITHUB_API_URL + ENDPOINT, CONFIG)
+            .then(response => response.json())
+            .then(events => {
+                let mostRecentEvent = events.find((event) => event.type === 'PushEvent');
+                let dateOfMostRecentPush = new Date(mostRecentEvent['created_at']).toDateString();
+                return dateOfMostRecentPush;
+            });
     }
 
-    return fetch(GITHUB_API_URL + ENDPOINT, CONFIG)
-    .then(response => response.json())
-        .then(events => {
-            let mostRecentEvent = events.find((event) => event.type === "PushEvent")
-            console.log(mostRecentEvent)
-        });
+    getDateOfLastCommit('SamLansford')
+        .then(console.log)
+        .catch(console.error);
 }
-
-getDateOfLastCommit("SamLansford");
-
