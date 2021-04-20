@@ -9,3 +9,11 @@ function fizzbuzz() {
     }
 }
 
+// return average of numbers
+function mean(sequence) {
+    let sum = 0;
+    for (let i = 0; i < sequence.length; i+=1) {
+        sum += sequence[i];
+    }
+    return sum / sequence.length;
+}
