@@ -17,3 +17,14 @@ function mean(sequence) {
     }
     return sum / sequence.length;
 }
+
+let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let total = 0;
+function average() {
+    for (let i = 0; i < numArray.length; i++) {
+        total += numArray[i];
+    }
+    let avg = total / numArray.length;
+    return avg;
+}
+console.log(average());
