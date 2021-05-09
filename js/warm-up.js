@@ -26,5 +26,6 @@ function average() {
     }
     let avg = total / numArray.length;
     return avg;
+    console.log(avg);
 }
 console.log(average());
