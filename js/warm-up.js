@@ -18,7 +18,7 @@ function mean(sequence) {
     return sum / sequence.length;
 }
 
-let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 let total = 0;
 function average() {
     for (let i = 0; i < numArray.length; i++) {
