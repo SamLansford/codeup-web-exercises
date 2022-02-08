@@ -139,7 +139,6 @@
 // }
 
 
-
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -155,7 +154,6 @@
 // alert("price before discount." + totalBill);
 // var priceAfterDiscount = calculateTotal(luckyNumber, totalBill);
 // alert("This is your price after discount " + priceAfterDiscount);
-
 
 
 /**
@@ -205,9 +203,10 @@ var i = randomNumber;
 function sayHello(name) {
     return "Hello, " + name + "!";
 }
+
 function randomPositiveEvenNumber() {
     var randomNumber = Math.ceil(Math.random() * 100) + 10;
-    if(randomNumber % 2 !== 0) {
+    if (randomNumber % 2 !== 0) {
         return randomPositiveEvenNumber()
     }
 

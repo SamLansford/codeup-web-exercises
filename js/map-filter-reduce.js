@@ -46,34 +46,34 @@
     console.log(languagesArr);
     console.log("This logs is for the log above, for the users with at least 3 languages")
 
-    let emailsArr = users.map(function (email){
+    let emailsArr = users.map(function (email) {
         return email.email
     });
     console.log(emailsArr + " displays all emails");
 
-    let yearsTotalArr = users.reduce(function (a,c){
+    let yearsTotalArr = users.reduce(function (a, c) {
         return a + c.yearsOfExperience;
 
-    },0);
+    }, 0);
     let averageYears = yearsTotalArr / users.length
     console.log(averageYears + ", The average years with all the people.");
 
-    let longestEmail = users.reduce(function (a,c){
+    let longestEmail = users.reduce(function (a, c) {
         return (a.email.length > c.email.length) ? a : c;
     });
     console.log(longestEmail.email);
     console.log("This log is for the long above, the person with the longest email.")
 
-    let allUserNames = users.reduce(function (a,c){
+    let allUserNames = users.reduce(function (a, c) {
         // return a + ', ' + c.name
         return (a.name || a) + ', ' + c.name
     });
     console.log(allUserNames);
 
-    let uniqueLanguages = users.reduce(function (acc,c,index) {
+    let uniqueLanguages = users.reduce(function (acc, c, index) {
         let ind = index;
 
-        let filteredLanguages = c.languages.filter(function (lang){
+        let filteredLanguages = c.languages.filter(function (lang) {
 
         })
     })

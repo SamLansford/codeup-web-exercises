@@ -1,4 +1,4 @@
-(function(){
+(function () {
     "use strict";
 
     /**
@@ -7,7 +7,7 @@
      * 'names'.
      */
 
-    var names = ['Sam','John','Ryan','Josh'];
+    var names = ['Sam', 'John', 'Ryan', 'Josh'];
 
 
     /**
@@ -25,10 +25,10 @@
      * accessing each element's index.
      */
 
-        console.log("This is " + names[0] + ".");
-        console.log("This is " + names[1] + ".");
-        console.log("This is " + names[2] + ".");
-        console.log("This is " + names[3] + ".");
+    console.log("This is " + names[0] + ".");
+    console.log("This is " + names[1] + ".");
+    console.log("This is " + names[2] + ".");
+    console.log("This is " + names[3] + ".");
 
     /**
      * TODO:
@@ -64,7 +64,7 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-    var numbers = [1,2,3,4,5,6,7]
+    var numbers = [1, 2, 3, 4, 5, 6, 7]
 
 
     function first() {
@@ -84,8 +84,6 @@
     }
 
     console.log(Last());
-
-
 
 
 })();

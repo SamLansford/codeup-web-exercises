@@ -52,7 +52,7 @@
             exclude: "minutely,hourly"
         }).done(function (data) {
             reverseGeocode({lng, lat}, MAPBOX_TOKEN).then(function (data) {
-                $("#current").text("Current Location: " + data )
+                $("#current").text("Current Location: " + data)
             })
             console.log(data);
 

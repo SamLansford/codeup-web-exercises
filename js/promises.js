@@ -9,8 +9,9 @@ function wait(num) {
         setTimeout(() => {
             if (num) {
                 resolve("You'll see this after " + timeConvert(num) + " seconds");
-            };
-        },num)
+            }
+            ;
+        }, num)
     });
 };
 //

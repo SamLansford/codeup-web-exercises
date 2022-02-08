@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <title>JQuery FAQs</title>
 
-<!--    CSS here-->
+    <!--    CSS here-->
     <style>
         body {
             text-align: center;
         }
+
         .invisible {
             visibility: hidden;
         }
+
         /*.color {*/
         /*    background-color: lightpink;*/
         /*}*/
@@ -64,7 +66,9 @@
     <br>
 
     <dt class="color">Can people take pets to the National Park?</dt>
-    <dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities.</dd>
+    <dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in
+        some lodging facilities.
+    </dd>
 
 </dl>
 
@@ -96,7 +100,6 @@
 <button class="button">button</button>
 
 
-
 <script src="js/jquery-3.5.1.js"></script>
 
 
@@ -104,29 +107,29 @@
 <script>
     "use strict";
     // turn dd invisible or not
-    $(document).ready(function (){
-        $("#link").click(function (){
+    $(document).ready(function () {
+        $("#link").click(function () {
             $("dd").toggleClass("invisible")
         });
 
         // change dt background color
-        $("dt").click(function (){
+        $("dt").click(function () {
             $(this).css("background-color", "lightpink");
         });
 
         // change the last li"s background color with the button
-        $(".button").click(function (){
-            $("ul li:last-child").css("backgroundColor","yellow");
+        $(".button").click(function () {
+            $("ul li:last-child").css("backgroundColor", "yellow");
         });
 
         // change the font weight of all li when click any h3
-        $("h3").click(function (){
-            $("li").css("fontWeight","bold")
+        $("h3").click(function () {
+            $("li").css("fontWeight", "bold")
         })
 
         // change the font color one of the first li when clicked.
-        $("li").click(function (){
-            $(this).parent().children().first().css("color","blue")
+        $("li").click(function () {
+            $(this).parent().children().first().css("color", "blue")
         })
 
     });

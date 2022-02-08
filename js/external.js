@@ -20,15 +20,15 @@ var HerculesDaysRented = parseInt(prompt("How may days was Hercules rented"))
 var totalRentalCost = (littleMermaidDaysRented + BrotherBearDaysRented + HerculesDaysRented) * dailyRentalRateDollars
 alert('Total coast is ' + totalRentalCost)
 
- var googleHours = prompt("How many hours did you work at Google")
- var googleHourlyRateDollars = 400
- var amazonHours = prompt("How many hours did you work at Amazon")
- var amazonHourlyRateDollars = 380
- var facebookHours = prompt("How many hours did you work at Facebook")
- var facebookHourlyRateDollars =350
- var totalMade = ((amazonHourlyRateDollars * amazonHours)+ (facebookHourlyRateDollars * facebookHours)+
-     (googleHourlyRateDollars * googleHours))
- alert("Total coast is " + totalMade)
+var googleHours = prompt("How many hours did you work at Google")
+var googleHourlyRateDollars = 400
+var amazonHours = prompt("How many hours did you work at Amazon")
+var amazonHourlyRateDollars = 380
+var facebookHours = prompt("How many hours did you work at Facebook")
+var facebookHourlyRateDollars = 350
+var totalMade = ((amazonHourlyRateDollars * amazonHours) + (facebookHourlyRateDollars * facebookHours) +
+    (googleHourlyRateDollars * googleHours))
+alert("Total coast is " + totalMade)
 
 let isClassOpen = confirm("Is there room in the class?");
 let isScheduleOpen = confirm("Does this class work with your schedule?")
@@ -42,6 +42,7 @@ alert("is the product offer applied: " + (isOfferValid + isPremiumMember))
 function Hello() {
     alert("hey there");
 }
+
 Hello("codeup");
 
 function isFive(input) {
@@ -83,7 +84,7 @@ console.log(getSmallerSegment("codeup", 6));
 
 //IIFE syntax
 
-(function() {
+(function () {
 
 })();
 

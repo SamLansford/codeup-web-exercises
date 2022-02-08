@@ -18,9 +18,9 @@ form {
 }
 
 fieldset {
-    -webkit-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
     /* There must be 1em between the content and the border of this element */
     /* It should have no border */
     /* Its background should be white */
@@ -61,7 +61,8 @@ fieldset {
     /* The border of this element should be 1px, and its color should be light grey */
     background-color: #0fb784;
     padding: 8px;
-    font-weight: bold; color: white;
+    font-weight: bold;
+    color: white;
     border: 1px solid lightgray;
 
 }

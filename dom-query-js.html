@@ -37,7 +37,7 @@
 <button id="btn4">Click here</button>
 
 <script>
-    (function() {
+    (function () {
         "use strict";
 
         // TODO: Uncomment next line and get the main header element by id
@@ -45,10 +45,10 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
 
-        let changeHeader = function(){
+        let changeHeader = function () {
             mainHeader.innerHTML = "JavaScript is Cool"
         }
-        document.getElementById("btn1").addEventListener("click",changeHeader)
+        document.getElementById("btn1").addEventListener("click", changeHeader)
 
         // TODO: Uncomment the next line and get the sub header element by id
         let subHeader = document.getElementById("sub-header")
@@ -56,17 +56,17 @@
         // TODO: Set the text color of subHeader to blue
 
 
-        let chnageColor = function(){
+        let chnageColor = function () {
             subHeader.style.color = "blue"
         }
-        document.getElementById("btn2").addEventListener("click",chnageColor)
+        document.getElementById("btn2").addEventListener("click", chnageColor)
 
         // TODO: Uncomment the next line and get all list items
         let listItems = Array.from(document.getElementsByTagName("li"))
 
         // TODO: Set text color on every other list item to grey
 
-        let changeEveryOther = function(){
+        let changeEveryOther = function () {
             let makeGray = true;
 
             listItems.forEach((li) => {
@@ -78,8 +78,7 @@
                 }
             })
         }
-        document.getElementById("btn3").addEventListener("click",changeEveryOther)
-
+        document.getElementById("btn3").addEventListener("click", changeEveryOther)
 
 
         // TODO: Set text color of li with dbid = 1 to blue
@@ -90,10 +89,10 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
-        let changePar = function() {
+        let changePar = function () {
             Array.from(document.getElementsByClassName("sub-paragraph"))[0].innerHTML = "Mission Accomplished!"
         }
-        document.getElementById("btn4").addEventListener("click",changePar)
+        document.getElementById("btn4").addEventListener("click", changePar)
 
     })();
 </script>

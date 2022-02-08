@@ -119,7 +119,7 @@ function twelveSidedDie() {
     return Math.floor(Math.random() * 12) + 1;
 };
 
-console.log("Number from the twelve side dice is "  + twelveSidedDie());
+console.log("Number from the twelve side dice is " + twelveSidedDie());
 
 // Make a function called tetrahedron() that returns a random integer between 1 and 4.
 
@@ -144,11 +144,11 @@ function listOfRolls(num) {
     let returnArray = [];
     for (let i = 0; i < num; i += 1) {
         returnArray.push(rollDie());
-    } return returnArray;
+    }
+    return returnArray;
 };
-let numberOfRolls = prompt("How many time would you like to roll the dice" );
+let numberOfRolls = prompt("How many time would you like to roll the dice");
 console.log("Here are the result of the rolls " + listOfRolls(numberOfRolls));
-
 
 
 // Make a function called listOfRollsFromDieFunc(numberOfRolls, diceFunction)

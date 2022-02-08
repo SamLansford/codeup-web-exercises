@@ -9,7 +9,7 @@ var favRestaurants = [
     {
         name: "KungFu noodles",
         information: "Hand-pulled noodles, dumplings & " +
-        "steamed buns are the specialties at this modest Chinese restaurant.",
+            "steamed buns are the specialties at this modest Chinese restaurant.",
         location: [-98.61865, 29.496402],
     },
     {
@@ -19,9 +19,9 @@ var favRestaurants = [
     }
 ]
 
-favRestaurants.forEach(function (favRestaurant){
+favRestaurants.forEach(function (favRestaurant) {
     let popup = new mapboxgl.Popup()
-        .setHTML('<h2>'+ favRestaurant.name + '</h2>' +
+        .setHTML('<h2>' + favRestaurant.name + '</h2>' +
             '<p>' + favRestaurant.information + '</p>')
     new mapboxgl.Marker()
         .setLngLat(favRestaurant.location)

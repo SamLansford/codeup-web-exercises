@@ -13,7 +13,6 @@
 // console.log(testFunction(returnInputAsOutput, true, true));
 
 
-
 // var x = 20;
 //
 // while (x < 50) {
@@ -48,7 +47,6 @@
 //     }while (i <= 20);
 
 
-
 // function jeffGoingTooFast(areCosLooking) {
 //
 //     let copsAreLooking = areCosLooking;
@@ -68,7 +66,6 @@
 // jeffGoingTooFast(false)
 
 
-
 // function fizzBuzz(){
 //
 // }
@@ -78,14 +75,6 @@
 //         else if (i % 5 == 0) console.log("Buzz");
 //         else console.log(i);
 //     }
-
-
-
-
-
-
-
-
 
 
 var beverage1 = {
@@ -102,16 +91,15 @@ console.log(beverage1)
 
 
 var beverage2 = {};
-    beverage2.brandName = "Rose";
-    beverage2.type = "wine";
-    beverage2.volumeInLiters = 35;
-    beverage2.priceInCenters = 20;
-    beverage2.expirationDate = "4/30/2021";
-    beverage2.dateOfPreviousSips = ["2/18/2021"];
-    beverage2.isOpen = true;
+beverage2.brandName = "Rose";
+beverage2.type = "wine";
+beverage2.volumeInLiters = 35;
+beverage2.priceInCenters = 20;
+beverage2.expirationDate = "4/30/2021";
+beverage2.dateOfPreviousSips = ["2/18/2021"];
+beverage2.isOpen = true;
 
 console.log(beverage2);
-
 
 
 var users = [
@@ -130,17 +118,16 @@ var users = [
 ];
 
 
+console.log(user[0].givenName + " " + user[1].givenName + " " + user[2].givenName);
 
-console.log(user[0].givenName + " " + user[1].givenName + " " + user[2].givenName );
-
-users.forEach(function (user){
+users.forEach(function (user) {
     user.givenName = "John Doe";
     user.age += 1
 });
 
 console.log(users);
 
-users.forEach(function (user){
+users.forEach(function (user) {
     user.age += 1
 });
 
