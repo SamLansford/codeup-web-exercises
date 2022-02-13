@@ -20,7 +20,7 @@ body {
 .navigation {
     position: relative;
     width: 400px;
-    height: 50px;
+    height: 70px;
     background: #fff;
     display: flex;
     justify-content: center;
@@ -35,5 +35,18 @@ body {
 
 .navigation ul li {
     position: relative;
-    list-style-type: none;
+    list-style: none;
+    width: 70px;
+    height: 50px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
 }
