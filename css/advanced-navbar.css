@@ -37,7 +37,7 @@ body {
     position: relative;
     list-style: none;
     width: 70px;
-    height: 50px;
+    height: 70px;
     z-index: 1;
 }
 
@@ -49,4 +49,17 @@ body {
     flex-direction: column;
     width: 100%;
     text-align: center;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 80px;
+    font-size: 1.5em;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+.navigation ul li:hover a .icon  {
+    transform: translateY(-50px);
 }
