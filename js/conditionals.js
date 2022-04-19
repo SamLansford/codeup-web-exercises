@@ -62,18 +62,21 @@
  */
 
 // let color = randomColor;
-//
-// switch (colors) {
-//     case "red":
-//         console.log("Roses are red.");
-//         break;
-//     case "blue":
-//         console.log("Oceans are blue.");
-//         break;
-//     case "cyan":
-//         console.log("I don't know anything about cyan.")
-//     default:
-//         console.log(color + " Is a great color too");
+
+// function analyzeColor(color) {
+//     switch (color) {
+//         case "red":
+//             console.log("Roses are red.");
+//             break;
+//         case "blue":
+//             console.log("Oceans are blue.");
+//             break;
+//         case "cyan":
+//             console.log("I don't know anything about cyan.");
+//             break;
+//         default:
+//             console.log(color + " Is a great color too");
+//     }
 // }
 
 /**
@@ -174,47 +177,62 @@
  */
 
 
-// var confirmNumber = confirm ("Would you like to enter a number?");
-// if (confirmNumber) {
-//     var confirmNumber = +prompt("What number would you like to enter");
-//     if (isNaN(confirmNumber)) {
-//         alert("That didn't look like a number.");
-//     } else {
-//         (confirmNumber % 2 === 0) ? alert("You entered an even number ") : alert("You entered an odd number");
-//         (confirmNumber >= 0) ? alert("This number is positive") : alert("This number is negative");
-//         alert("This is your number plus 100 and it's equal to " + (confirmNumber + 100));
-//     }
-// } else {
-//     alert("You didn't want to enter a number.");
-// }
-
-var randomNumber = Math.floor(Math.random() * 10)
-var i = randomNumber;
-if (i <= 5) {
-    console.log("Number " + randomNumber + " can be in our group")
-} else {
-    console.log("Number " + randomNumber + " can't be in this group")
-}
-
-var i = randomNumber;
-(i % 2 === 0) ? alert("Number " + randomNumber + " is an even number") : alert("Number " + randomNumber + " is an odd number");
-(i >= 0) ? alert("Number " + randomNumber + " is positive") : alert("Number " + randomNumber + " is negative");
-
-function sayHello(name) {
-    return "Hello, " + name + "!";
-}
-
-function randomPositiveEvenNumber() {
-    var randomNumber = Math.ceil(Math.random() * 100) + 10;
-    if (randomNumber % 2 !== 0) {
-        return randomPositiveEvenNumber()
+let confirmNumber = confirm ("Would you like to enter a number?");
+if (confirmNumber) {
+    let confirmNumber =+ prompt("What number would you like to enter");
+    if (isNaN(confirmNumber)) {
+        alert("That didn't look like a number.");
+    } else {
+        evenOrOdd(confirmNumber);
+        positiveOrNegative(confirmNumber);
+        plusOneHundred(confirmNumber);
+        // (confirmNumber % 2 === 0) ? alert("You entered an even number ") : alert("You entered an odd number");
+        // (confirmNumber >= 0) ? alert("This number is positive") : alert("This number is negative");
+        // alert("This is your number plus 100 and it's equal to " + (confirmNumber + 100));
     }
-
-    return randomNumber;
+} else {
+    alert("You didn't want to enter a number.");
 }
 
-function plusTwo(x) {
-    return x + 2;
+function evenOrOdd(num) {
+    (num % 2 === 0) ? alert("You entered an even number ") : alert("You entered an odd number");
 }
 
-const phraseSplitterEs6 = phrase => phrase.split(" ");
+function positiveOrNegative(num) {
+    (num >= 0) ? alert("This number is positive") : alert("This number is negative");
+}
+
+function plusOneHundred(num) {
+    alert("This is your number plus 100 and it's equal to " + (num + 100));
+}
+
+// var randomNumber = Math.floor(Math.random() * 10)
+// var i = randomNumber;
+// if (i <= 5) {
+//     console.log("Number " + randomNumber + " can be in our group")
+// } else {
+//     console.log("Number " + randomNumber + " can't be in this group")
+// }
+//
+// var i = randomNumber;
+// (i % 2 === 0) ? alert("Number " + randomNumber + " is an even number") : alert("Number " + randomNumber + " is an odd number");
+// (i >= 0) ? alert("Number " + randomNumber + " is positive") : alert("Number " + randomNumber + " is negative");
+//
+// function sayHello(name) {
+//     return "Hello, " + name + "!";
+// }
+//
+// function randomPositiveEvenNumber() {
+//     var randomNumber = Math.ceil(Math.random() * 100) + 10;
+//     if (randomNumber % 2 !== 0) {
+//         return randomPositiveEvenNumber()
+//     }
+//
+//     return randomNumber;
+// }
+//
+// function plusTwo(x) {
+//     return x + 2;
+// }
+//
+// const phraseSplitterEs6 = phrase => phrase.split(" ");
