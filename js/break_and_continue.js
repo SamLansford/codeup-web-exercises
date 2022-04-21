@@ -1,7 +1,7 @@
 // 'use strict'
 //
 // while (true) {
-//     var number = prompt("Give me an odd number between 1-50");
+//     let number = prompt("Give me an odd number between 1-50");
 //     if (number % 2 !== 0 && number <= 50 && number >= 1) {
 //         break;
 //     } else alert("This is not an odd number.")
