@@ -18,7 +18,7 @@
 //     firstName: "Sam",
 //     lastName: "Lansford",
 //     };
-//
+
 // console.log(person.firstName);
 // console.log(person.lastName);
 
@@ -54,6 +54,7 @@
  * and console.log the relevant messages for each person
  */
 
+
 let shoppers = [
     {name: 'Cameron', amount: 180},
     {name: 'Ryan', amount: 250},
@@ -64,26 +65,26 @@ let shoppers = [
 //     return "$" + amount.toFixed(2);
 // }
 
-function calculateDiscount(amount, discountAmountThreshold, discountPercentage) {
-    if (amount > discountAmountThreshold) {
-        return amount * discountPercentage;
-    } else {
-        return 0;
-    } // return (amount > discountAmountThreshold) ? amount * discountPercentage : 0;
-}
-
-shoppers.forEach(function (shopper) {
-    let shopperName = shopper.name
-    let amountBeforeDiscount = shopper.amount
-    let discountPercent = .12
-    let discountAmountThreshold = 200;
-    let amountOff = calculateDiscount(amountBeforeDiscount, discountAmountThreshold, discountPercent);
-    let totalCost = amountBeforeDiscount - amountOff;
-    let message = shopperName + " The price before discount is "
-        + amountBeforeDiscount + ". The price after the discount is "
-        + totalCost;
-    console.log(message);
-});
+// function calculateDiscount(amount, discountAmountThreshold, discountPercentage) {
+//     if (amount > discountAmountThreshold) {
+//         return amount * discountPercentage;
+//     } else {
+//         return 0;
+//     } // return (amount > discountAmountThreshold) ? amount * discountPercentage : 0;
+// }
+//
+// shoppers.forEach(function (shopper) {
+//     let shopperName = shopper.name
+//     let amountBeforeDiscount = shopper.amount
+//     let discountPercent = .12
+//     let discountAmountThreshold = 200;
+//     let amountOff = calculateDiscount(amountBeforeDiscount, discountAmountThreshold, discountPercent);
+//     let totalCost = amountBeforeDiscount - amountOff;
+//     let message = shopperName + " The price before discount is "
+//         + amountBeforeDiscount + ". The price after the discount is "
+//         + totalCost;
+//     console.log(message);
+// });
 
 
 /** TODO:
@@ -148,9 +149,9 @@ var books = [
 //     {title: "The Great Gatsby", author: {firstName: "F. Scott", lastName: " Fitzgerald"}},
 // ]
 
-console.log(books[0].title);
-console.log(books[0].author.firstName);
-console.log(books[0].author.lastName);
+// console.log(books[0].title);
+// console.log(books[0].author.firstName);
+// console.log(books[0].author.lastName);
 
 
 /**
@@ -178,12 +179,12 @@ console.log(books[0].author.lastName);
  *      ...
  */
 
-books.forEach(function (book, index) {
-    let bookNumber = index + 1
-    console.log("Book # " + bookNumber + "\n" + book.title + "\n"
-        + book.author.firstName + " "
-        + book.author.lastName);
-});
+// books.forEach(function (book, index) {
+//     let bookNumber = index + 1
+//     console.log("Book # " + bookNumber + "\n" + book.title + "\n"
+//         + book.author.firstName + " "
+//         + book.author.lastName);
+// });
 
 
 /**
@@ -214,7 +215,7 @@ function createBook(title, author) {
 let booksUsingFunction = [];
 
 let titles = ["title1", "title2", "title3"];
-let authors = ["author1", "author2", "author3"];
+let authors = ["author1F author1L", "author2F author2L", "author3F author3L"];
 
 for (let i = 0; i < titles.length; i += 1) {
     booksUsingFunction.push(createBook(titles[i], authors[i]));
@@ -230,9 +231,9 @@ function showBookInfo(book, bookNumber) {
 //     showBookInfo(book,index + 1)
 // })
 
-books.forEach(showBookInfo);
+booksUsingFunction.forEach(showBookInfo);
 
-// console.log(booksUsingFunction)
+console.log(booksUsingFunction)
 
 
 // })();
