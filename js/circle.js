@@ -10,7 +10,7 @@
             // TODO: complete this method
             // hint: area = pi * radius^2
             let area;
-
+            //Math.PI and Math.pi is different. To get numbers have to use Math.PI
             area = Math.PI * Math.pow(this.radius, 2);
 
             return area; // TODO: return the proper value
