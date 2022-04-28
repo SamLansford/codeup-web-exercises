@@ -40,3 +40,15 @@ if (x > 10) {
 } else {
     answer = "less than 10";
 }
+
+function alphabetizer(str) {
+    // let strArray = str.split("")
+    // console.log(strArray);
+    // let sortArray = strArray.sort();
+    // console.log(strArray);
+    // return sortArray.join("")
+
+    str.split('').sort().join('')
+}
+
+console.log(alphabetizer("codeup"));
