@@ -62,7 +62,7 @@ h1 {
 
 body {
     background-color: aliceblue;
-    background-image: url('../img/jarvis.png');
+    background-image: url(../img/jarvis.png);
     background-blend-mode: overlay;
 }
 

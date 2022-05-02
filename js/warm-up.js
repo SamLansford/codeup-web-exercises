@@ -52,3 +52,15 @@ function alphabetizer(str) {
 }
 
 console.log(alphabetizer("codeup"));
+
+//Write a function that takes in an array of String and return the sum of all numbers
+
+function sumOfElements(arr) {
+    let bucket = 0;
+    for (let el of arr) {
+        bucket += el;
+    }
+    return bucket;
+}
+
+console.log(sumOfElements([1,2,3,4,5,6]))
