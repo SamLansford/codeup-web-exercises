@@ -93,12 +93,13 @@ a {
 
 .profile-image {
     position: absolute;
-    top: 16em;
+    top: 245px;
 }
 
 .container {
     display: flex;
     margin-top: 2em;
+    margin-right: 1em;
 }
 
 .profile-form {
@@ -134,15 +135,17 @@ a {
 }
 
 .profile-details {
-    width: 25%;
+    width: calc(25% - 2px);
+    /*width: 25%;*/
     margin: 0.5em;
     top: 0;
     bottom: 0;
 }
 
 .timeline {
-    width: 50%;
-    margin: 0.5em;
+    /*width: 50%;*/
+    width: calc(50% - .5em);
+    margin-right: 0.5em;
     top: 0;
     bottom: 0;
 }

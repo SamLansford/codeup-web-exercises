@@ -61,9 +61,10 @@ fieldset {
     /* The border of this element should be 1px, and its color should be light grey */
     background-color: #0fb784;
     padding: 8px;
+
     font-weight: bold;
     color: white;
-    border: 1px solid lightgray;
+    border: 3px solid black;
 
 }
 
@@ -75,7 +76,7 @@ fieldset {
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Calculate based on the padding of the `.btn` class */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    width: 100%;
+    /*width: 100%;*/
 
     margin: 0.5em 0 0.5em;
 
