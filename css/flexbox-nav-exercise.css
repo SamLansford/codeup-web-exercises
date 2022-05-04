@@ -19,6 +19,7 @@ ul {
     align-items: center;
 }
 
+
 nav a {
     text-decoration: none;
     color: black;
@@ -36,6 +37,8 @@ nav b {
     color: black;
     padding: .2em;
     font-size: 3em;
+    position: relative;
+    left: -30px;
 }
 
 nav ul li:nth-child(6) {
@@ -44,4 +47,9 @@ nav ul li:nth-child(6) {
 
 nav ul li:nth-child(4) {
     margin-right: auto;
+}
+
+footer {
+    position: relative;
+    margin-top: 48%;
 }

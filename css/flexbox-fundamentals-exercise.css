@@ -64,7 +64,7 @@ section:nth-of-type(1) {
 
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
-    align-self: self-end;
+    align-self: self-start;
 }
 
 .purple-box {

@@ -66,3 +66,32 @@ function sumOfElements(arr) {
 console.log(sumOfElements([1,2,3,4,5,6]))
 
 
+function returnProductEssentialDetails(product) {
+    return {
+        name: product.name,
+        priceInCents: product.priceInCents
+    }
+}
+
+console.log(returnProductEssentialDetails(product1));
+
+let product1 = {
+    name: 'Hammer',
+    priceInCents: 400,
+    description: 'It is a a hammer.',
+    inventory: 25034
+}
+
+let product2 = {
+    name: 'Computer',
+    priceInCents: 40000,
+    description: 'It is a computer.',
+    inventory: 33000
+}
+
+let product3 = {
+    name: 'Ruler',
+    priceInCents: 1000,
+    description: 'It is a ruler.',
+    inventory: 2200
+}
