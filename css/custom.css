@@ -1,8 +1,19 @@
-header {
+.jumbotron {
     background-image: url("../img/pizza.png");
+    height: 346px;
 }
 
-header h1 {
+.jumbotron h1 {
+    text-align: center;
     opacity: .7;
     font-weight: 400;
+}
+
+.btn-outline-secondary {
+    color: #91bcf9;
+    border-color: #91bcf9;
+}
+
+.btn-outline-secondary:hover {
+    background-color: lightcoral;
 }
