@@ -63,7 +63,7 @@ function sumOfElements(arr) {
     return bucket;
 }
 
-console.log(sumOfElements([1,2,3,4,5,6]))
+console.log(sumOfElements([1, 2, 3, 4, 5, 6]))
 
 
 function returnProductEssentialDetails(product) {
@@ -95,3 +95,14 @@ let product3 = {
     description: 'It is a ruler.',
     inventory: 2200
 }
+
+function average(array) {
+    let total = 0;
+    for (let i = 0; i < array.length; i++) {
+        total += array[i];
+    }
+    return total / array.length;
+}
+
+console.log(average([3, 5, 7, 10, 0]))
+console.log(average([0, 3, 5, 6, 21]))
