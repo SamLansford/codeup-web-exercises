@@ -106,3 +106,20 @@ function average(array) {
 
 console.log(average([3, 5, 7, 10, 0]))
 console.log(average([0, 3, 5, 6, 21]))
+
+//Write a function that will accept a string. It should return an object with the following properties: string, size,
+//containsLetterFromRSTLNE, and isOneWord
+
+function makeObjFromString(str) {
+    const obj = {};
+    obj.string = str;
+    obj.size = str.length;
+    obj.isOneWord = str.indexOf(" ") < 0;
+    let lc = str.toLowerCase();
+    obj.containsLetterFromRSTLNE = !!(lc.includes("r") || lc.includes("s") || lc.includes("l") || lc.includes("n") || lc.includes("e"));
+    return obj;
+}
+
+console.log(makeObjFromString("tacocat"));
+console.log(makeObjFromString("John Jacob"));
+console.log(makeObjFromString("Kacy Bobby"));
