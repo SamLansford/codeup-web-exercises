@@ -141,3 +141,10 @@ function createSandwich(arr1, arr2) {
 }
 
 console.log(createSandwich(breed, fillings));
+
+let stringArr = ["ONE", "TWO", "THREE", "FOUR"];
+
+let lowerCaseArray = stringArr.map(el => {
+    return el.toLowerCase();
+})
+console.log(lowerCaseArray);
